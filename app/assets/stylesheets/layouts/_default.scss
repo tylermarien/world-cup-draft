@@ -1,0 +1,8 @@
+.main-container {
+  @include grid-row();
+  padding-top: 50px;
+  
+  .main {
+    @include grid-column(12);
+  }
+}

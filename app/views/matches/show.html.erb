@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Occurs at:</strong>
+  <%= @match.occurs_at %>
+</p>
+
+<p>
+  <strong>Home:</strong>
+  <%= @match.home.name %>
+</p>
+
+<p>
+  <strong>Away:</strong>
+  <%= @match.away.name %>
+</p>
+
+<%= link_to 'Edit', edit_match_path(@match) %> |
+<%= link_to 'Back', matches_path %>

@@ -29,15 +29,13 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
-
 group :development do
   gem 'guard', '>= 2.2.2',       :require => false
   gem 'guard-minitest'
   gem 'guard-livereload',        :require => false
   gem 'rack-livereload'
   gem 'rb-fsevent',              :require => false
+  gem 'spring'
   gem 'terminal-notifier-guard'
 end
 

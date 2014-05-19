@@ -2,7 +2,8 @@ require 'test_helper'
 
 class PlayersControllerTest < ActionController::TestCase
   setup do
-    @player = players(:one)
+    sign_in users(:tyler)
+    @player = players(:messi)
   end
 
   test "should get index" do

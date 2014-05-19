@@ -2,7 +2,8 @@ require 'test_helper'
 
 class CountriesControllerTest < ActionController::TestCase
   setup do
-    @country = countries(:one)
+    sign_in users(:tyler)
+    @country = countries(:argentina)
   end
 
   test "should get index" do

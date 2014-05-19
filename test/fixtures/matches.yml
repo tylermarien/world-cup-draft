@@ -2,10 +2,5 @@
 
 one:
   occurs_at: 2014-05-16 20:24:44
-  home_id: 
-  away_id: 
-
-two:
-  occurs_at: 2014-05-16 20:24:44
-  home_id: 
-  away_id: 
+  home: argentina
+  away: brazil

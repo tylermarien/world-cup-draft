@@ -2,6 +2,7 @@ require 'test_helper'
 
 class MatchesControllerTest < ActionController::TestCase
   setup do
+    sign_in users(:tyler)
     @match = matches(:one)
   end
 

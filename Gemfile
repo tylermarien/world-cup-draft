@@ -34,6 +34,7 @@ gem 'spring',        group: :development
 
 group :development do
   gem 'guard', '>= 2.2.2',       :require => false
+  gem 'guard-minitest'
   gem 'guard-livereload',        :require => false
   gem 'rack-livereload'
   gem 'rb-fsevent',              :require => false

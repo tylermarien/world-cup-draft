@@ -76,6 +76,9 @@ GEM
       em-websocket (~> 0.5)
       guard (~> 2.0)
       multi_json (~> 1.8)
+    guard-minitest (2.3.0)
+      guard (~> 2.0)
+      minitest (>= 3.0)
     hike (1.2.3)
     http_parser.rb (0.6.0)
     i18n (0.6.9)
@@ -178,6 +181,7 @@ DEPENDENCIES
   foundation-rails
   guard (>= 2.2.2)
   guard-livereload
+  guard-minitest
   jbuilder (~> 2.0)
   jquery-rails
   rack-livereload

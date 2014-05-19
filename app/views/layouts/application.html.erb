@@ -25,12 +25,21 @@
         <ul class="left">
           <li><%= link_to 'Countries', controller: :countries %></li>
           <li><%= link_to 'Players', controller: :players %></li>
-          <li><%= link_to 'Matches', controller: :matches %></li>          
+          <li><%= link_to 'Matches', controller: :matches %></li>
         </ul>
       </section>
     </nav>
     <div class="main-container">
-      <div class="main">
+      <div class="left-column">
+        <nav class="left-navigation">
+          <ul>
+            <li><%= link_to 'Countries', controller: :countries %></li>
+            <li><%= link_to 'Players', controller: :players %></li>
+            <li><%= link_to 'Matches', controller: :matches %></li>
+          </ul>
+        </nav>
+      </div>        
+      <div class="right-column">
         <%= yield %>
       </div>
     </div>

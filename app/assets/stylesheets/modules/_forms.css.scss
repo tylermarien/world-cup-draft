@@ -1,0 +1,12 @@
+.notice {
+  @include alert;
+}
+
+.alert {  
+  @include alert;
+  @include alert-style($alert-color);
+}
+
+input[type=submit] {
+  @include button;
+}

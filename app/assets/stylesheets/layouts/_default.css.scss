@@ -10,9 +10,3 @@
     @include grid-column(9);
   }
 }
-
-.left-navigation {
-  ul {
-    @include no-bullets;
-  }
-}

@@ -13,7 +13,7 @@
   <tbody>
     <% @matches.each do |match| %>
       <tr>
-        <td><%= match.occurs_at %></td>
+        <td><%= match.occurs_at.to_formatted_s(:long) %></td>
         <td><%= match.home.name %></td>
         <td><%= match.away.name %></td>
         <td><%= link_to 'Show', match %></td>

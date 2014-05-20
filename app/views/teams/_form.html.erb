@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :countries %><br>
-    <%= f.collection_select :country_ids, Country.all, :id, :name, {}, {multiple: true, size: 5} %>
+    <%= f.collection_select :country_ids, Country.all, :id, :to_s, {}, {multiple: true, size: 5} %>
   </div>
   <div class="field">
     <%= f.label :players %><br>
-    <%= f.collection_select :player_ids, Player.all, :id, :name, {}, {multiple: true, size: 5} %>
+    <%= f.collection_select :player_ids, Player.all, :id, :to_s, {}, {multiple: true, size: 5} %>
   </div>
   <div class="actions">
     <%= f.submit %>

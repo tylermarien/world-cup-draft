@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :home_id %><br>
-    <%= f.collection_select :home_id, Country.all, :id, :name %>
+    <%= f.collection_select :home_id, Country.all, :id, :to_s %>
   </div>
   <div class="field">
     <%= f.label :away_id %><br>
-    <%= f.collection_select :away_id, Country.all, :id, :name %>
+    <%= f.collection_select :away_id, Country.all, :id, :to_s %>
   </div>
   <div class="actions">
     <%= f.submit %>

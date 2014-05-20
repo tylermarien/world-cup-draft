@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140520011346) do
+ActiveRecord::Schema.define(version: 20140520013905) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
@@ -23,6 +23,18 @@ ActiveRecord::Schema.define(version: 20140520011346) do
     t.integer "country_id"
     t.integer "team_id"
   end
+
+  create_table "goals", force: true do |t|
+    t.integer  "match_id"
+    t.integer  "country_id"
+    t.integer  "player_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "goals", ["country_id"], name: "index_goals_on_country_id"
+  add_index "goals", ["match_id"], name: "index_goals_on_match_id"
+  add_index "goals", ["player_id"], name: "index_goals_on_player_id"
 
   create_table "matches", force: true do |t|
     t.datetime "occurs_at"

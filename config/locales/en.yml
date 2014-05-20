@@ -20,4 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  app:
+    name: "World Cup Draft"
+  nav:
+    teams: "Teams"
+    countries: "Countries"
+    players: "Players"
+    matches: "Matches"
+    goals: "Goals"

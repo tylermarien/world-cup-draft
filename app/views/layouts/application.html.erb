@@ -15,25 +15,25 @@
     <nav class="top-bar" data-topbar>
       <ul class="title-area">
         <li class="name">
-          <h1><%= link_to 'World Cup Draft', root_path %></h1>
+          <h1><%= link_to t('app.name'), root_path %></h1>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
       <section class="top-bar-section">
         <% if user_signed_in? %>
           <ul class="left">
-            <li><%= link_to 'Teams', teams_path %></li>
-            <li><%= link_to 'Countries', countries_path %></li>
-            <li><%= link_to 'Players', players_path %></li>
-            <li><%= link_to 'Matches', matches_path %></li>
-            <li><%= link_to 'Goals', goals_path %></li>
+            <li><%= link_to t('nav.teams'), teams_path %></li>
+            <li><%= link_to t('nav.countries'), countries_path %></li>
+            <li><%= link_to t('nav.players'), players_path %></li>
+            <li><%= link_to t('nav.matches'), matches_path %></li>
+            <li><%= link_to t('nav.goals'), goals_path %></li>
           </ul>
         <% end %>
         <ul class="right">
           <% if user_signed_in? %>
-            <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to t('devise.actions.sign_out'), destroy_user_session_path, method: :delete %></li>
           <% else %>
-            <li><%= link_to 'Sign in', new_user_session_path %></li>
+            <li><%= link_to t('devise.actions.sign_in'), new_user_session_path %></li>
           <% end %>
       </section>
     </nav>

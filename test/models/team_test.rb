@@ -1,8 +1,10 @@
 require 'test_helper'
 
 class TeamTest < ActiveSupport::TestCase
-  test "total returns the correct amount" do
+  
+  test "should return the correct total" do
     tyler = teams(:tyler)
-    assert_equal 3, tyler.total
+    assert_equal 3, tyler.calculate_total
   end
+  
 end

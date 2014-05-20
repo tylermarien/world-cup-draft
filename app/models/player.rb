@@ -3,7 +3,7 @@ class Player < ActiveRecord::Base
   has_many :goals
   has_and_belongs_to_many :teams
   
-  def number_of_goals
+  def calculate_goals
     goals.count
   end
   

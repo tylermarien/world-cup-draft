@@ -9,7 +9,7 @@
     <% @teams.each do |team| %>
     <tr>
       <td><%= team.name %></td>
-      <td><%= team.total %></td>
+      <td><%= team.calculate_total %></td>
     </tr>
     <% end %>
   </tbody>

@@ -11,12 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140520004659) do
+ActiveRecord::Schema.define(version: 20140520011346) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "countries_teams", id: false, force: true do |t|
+    t.integer "country_id"
+    t.integer "team_id"
   end
 
   create_table "matches", force: true do |t|

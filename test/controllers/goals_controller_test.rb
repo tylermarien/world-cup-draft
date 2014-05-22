@@ -2,6 +2,7 @@ require 'test_helper'
 
 class GoalsControllerTest < ActionController::TestCase
   setup do
+    sign_in users(:tyler)
     @goal = goals(:one)
   end
 

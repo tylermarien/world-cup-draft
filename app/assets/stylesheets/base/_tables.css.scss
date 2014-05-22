@@ -1,0 +1,11 @@
+table {
+  border: 1px solid $black;
+  
+  th, td {
+    padding: 5px 10px;
+  }
+  
+  th {
+    font-weight: bold;
+  }
+}

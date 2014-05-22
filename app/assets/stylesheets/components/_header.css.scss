@@ -1,0 +1,31 @@
+#header {
+  @include clearfix;
+  background: $black;
+  color: $white;
+  padding: 10px 20px;
+  
+  h1 {
+    float: left;
+    font-size: 22px;
+    line-height: 26px;
+  }
+  
+  a {
+    color: $white;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+#primary-navigation {
+  @include horizontal-list;
+  float: left;
+  padding-left: 50px;
+}
+
+#user-actions {
+  @include horizontal-list;
+  float: right;
+}

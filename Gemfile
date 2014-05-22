@@ -11,8 +11,10 @@ gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
 # Use Compass
 gem 'compass-rails'
-# Use Singularity Grid
-gem "singularitygs"
+# Use Breakpoint for breakpoints
+gem 'breakpoint', '~> 2.0.7'
+# Use Susy for grid
+gem 'susy', '~> 1.0.9'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views

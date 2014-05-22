@@ -1,11 +1,6 @@
-$include-html-classes: false;
-$include-html-form-classes: true;
-$include-html-global-classes: true;
-$include-html-table-classes: true;
-$include-html-top-bar-classes: true;
-$include-html-type-classes: true;
-
 @import 'compass';
+@import 'breakpoint';
+@import 'susy';
 
 @import 'layouts/default';
 

@@ -1,8 +1,9 @@
+/* frameworks */
 @import 'compass';
 @import 'breakpoint';
 @import 'susy';
 
-@import 'layouts/default';
-
-@import 'modules/forms';
-@import 'modules/scaffolds';
+@import 'variables/**/*';
+@import 'base/**/*';
+@import 'layouts/**/*';
+@import 'modules/**/*';

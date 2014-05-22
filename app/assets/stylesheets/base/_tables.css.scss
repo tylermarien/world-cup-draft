@@ -1,11 +1,29 @@
-table {
-  border: 1px solid $black;
-  
+table {  
   th, td {
-    padding: 5px 10px;
+    padding: rhythm(0.5) 20px;
   }
   
   th {
     font-weight: bold;
+  }
+  
+  thead {
+    tr th,
+    tr td {
+
+    }
+    
+    tr:last-child {
+      th, td {
+        @include trailing-border(1px, 0.5);
+      }
+    }
+
+  }
+  
+  tbody {
+    tr:nth-child(odd) {
+      background: $wheat;
+    }
   }
 }

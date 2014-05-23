@@ -1,9 +1,19 @@
-.notice {
-
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+  @include adjust-font-size-to(16px);
+  @include h-borders;
+  border-left: 1px solid $black;
+  border-right: 1px solid $black;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
-.alert {  
-
+input[type=checkbox] {
+  @include leader;
+  @include trailer;
 }
 
 select[multiple] {
@@ -12,5 +22,23 @@ select[multiple] {
 }
 
 input[type=submit] {
+  @include adjust-font-size-to(16px);
+  @include leader(0.5);
+  @include trailer(0.5);
+  @include padding-leader(0.5);
+  @include padding-trailer(0.5);
+  background: $blue;
+  border: none;
+  color: $white;
+  padding-left: 15px;
+  padding-right: 15px;
+  
+  &:hover {
+    background: $teal;
+    cursor: pointer;
+  }
+}
 
+body {
+  @include debug-vertical-alignment;
 }

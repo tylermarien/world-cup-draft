@@ -16,3 +16,9 @@ a {
 h1 {
   @include adjust-font-size-to(28px);
 }
+
+h2 {
+  @include adjust-font-size-to(24px);
+  margin: 0;
+  padding: 0;
+}

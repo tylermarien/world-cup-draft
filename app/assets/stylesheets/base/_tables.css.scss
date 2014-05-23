@@ -3,6 +3,14 @@ table {
     padding: rhythm(0.5) 20px;
   }
   
+  th:first-child, td:first-child {
+    padding-left: 0;
+  }
+  
+  th:last-child, td:last-child {
+    padding-right: 0;
+  }    
+  
   th {
     font-weight: bold;
   }
@@ -20,5 +28,5 @@ table {
     }
 
   }
-  
+
 }

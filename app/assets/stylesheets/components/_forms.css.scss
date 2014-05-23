@@ -1,13 +1,22 @@
+label {
+  @include trailer(0.5);
+  display: block;
+}
+
 input[type=text],
 input[type=email],
 input[type=password],
 textarea {
-  @include adjust-font-size-to(16px);
-  @include h-borders;
-  border-left: 1px solid $black;
-  border-right: 1px solid $black;
+  @include adjust-font-size-to(16px, 1.5);
+  border: none;
   margin: 0;
-  padding: 0;
+  padding: 0 10px;
+  width: 100%;
+}
+
+select {
+  @include adjust-font-size-to(16px, 1.5);
+  border: 0;
   width: 100%;
 }
 
@@ -37,8 +46,4 @@ input[type=submit] {
     background: $teal;
     cursor: pointer;
   }
-}
-
-body {
-  @include debug-vertical-alignment;
 }

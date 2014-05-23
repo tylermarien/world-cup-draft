@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :countries %><br>
+    <%= f.label :countries %>
     <%= f.collection_select :country_ids, Country.all, :id, :to_s, {}, {multiple: true, size: 5} %>
   </div>
   <div class="field">
-    <%= f.label :players %><br>
+    <%= f.label :players %>
     <%= f.collection_select :player_ids, Player.all, :id, :to_s, {}, {multiple: true, size: 5} %>
   </div>
   <div class="actions">

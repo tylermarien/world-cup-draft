@@ -4,6 +4,10 @@
   color: $white;
   padding: rhythm(1) 20px;
   
+  .container {
+    @include container;
+  }
+  
   h1 {
     @include adjust-font-size-to(20px);
     float: left;

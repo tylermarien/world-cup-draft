@@ -1,0 +1,7 @@
+<ul id="user-actions">
+  <% if user_signed_in? %>
+    <li><%= link_to t('devise.actions.sign_out'), destroy_user_session_path, method: :delete %></li>
+  <% else %>
+    <li><%= link_to t('devise.actions.sign_in'), new_user_session_path %></li>
+  <% end %>
+</ul>

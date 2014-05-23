@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+<nav id="primary-navigation">        
+  <ul>
+    <li><%= link_to t('nav.teams'), teams_path %></li>
+    <li><%= link_to t('nav.countries'), countries_path %></li>
+    <li><%= link_to t('nav.players'), players_path %></li>
+    <li><%= link_to t('nav.matches'), matches_path %></li>
+    <li><%= link_to t('nav.goals'), goals_path %></li>
+  </ul>
+</nav>
+<% end %>

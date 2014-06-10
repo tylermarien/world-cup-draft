@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140520013905) do
+ActiveRecord::Schema.define(version: 20140610033736) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20140520013905) do
     t.integer  "away_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "played"
   end
 
   add_index "matches", ["away_id"], name: "index_matches_on_away_id"

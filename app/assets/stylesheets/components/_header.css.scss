@@ -4,8 +4,9 @@
   color: $white;
   padding: rhythm(1) 20px;
   
-  .container {
-    @include container;
+  .header-container {
+    margin: 0 auto;
+    width: 1200px;
   }
   
   h1 {

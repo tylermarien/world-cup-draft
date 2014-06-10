@@ -1,7 +1,10 @@
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+
 /* frameworks */
 @import 'compass';
 @import 'breakpoint';
-@import 'susy';
+@import 'singularitygs';
 
 @import 'variables/**/*';
 @import 'base/**/*';

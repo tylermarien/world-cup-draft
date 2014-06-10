@@ -7,6 +7,10 @@ class Match < ActiveRecord::Base
     self.goals.where(country_id: self.home.id).count
   end
   
+  def away_goals
+    self.goals.where(country_id: self.away.id).count
+  end  
+  
   def to_s
     home.name + " vs " + away.name
   end

@@ -14,6 +14,10 @@ class Team < ActiveRecord::Base
     countries.inject(0) { |sum, c| sum + c.matches_played }
   end
   
+  def calculate_points_from_wins
+    countries.inject(0) { |sum, c| sum + (c.wins * 4) }
+  end
+  
   def to_s
     name
   end

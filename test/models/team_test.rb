@@ -17,4 +17,9 @@ class TeamTest < ActiveSupport::TestCase
     assert_equal 1, tyler.calculate_points_from_matches_played
   end
   
+  test "should return the correct points from wins" do
+    tyler = teams(:tyler)
+    assert_equal 4, tyler.calculate_points_from_wins
+  end  
+  
 end

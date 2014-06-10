@@ -8,6 +8,10 @@ class CountryTest < ActiveSupport::TestCase
   
   test "should return the correct number of matches played when all matches are away matches" do
     assert_equal 1, countries(:brazil).matches_played
-  end  
+  end
+  
+  test "should return the correct number of wins" do
+    assert_equal 1, countries(:argentina).wins
+  end
 
 end

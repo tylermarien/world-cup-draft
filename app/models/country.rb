@@ -8,11 +8,33 @@ class Country < ActiveRecord::Base
   end
   
   def wins
-    self.home_matches.count { |m| m.winning_team.id == self.id } + self.away_matches.count { |m| m.winning_team.id == self.id }
+    wins = 0
+    self.home_matches.where(played: true).each do |m|
+      if !m.winning_country.nil? && m.winning_country.id == self.id
+        wins = wins + 1
+      end
+    end
+    self.away_matches.where(played: true).each do |m|
+      if !m.winning_country.nil? && m.winning_country.id == self.id
+        wins = wins + 1
+      end
+    end    
+    return wins
   end
   
   def ties
-    0
+    ties = 0
+    self.home_matches.where(played: true).each do |m|
+      if m.tie?
+        ties = ties + 1
+      end
+    end
+    self.away_matches.where(played: true).each do |m|
+      if m.tie?
+        ties = ties + 1
+      end
+    end
+    return ties
   end
   
   def to_s

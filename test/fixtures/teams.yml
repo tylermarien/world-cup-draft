@@ -2,8 +2,15 @@
 
 tyler:
   name: Tyler
-  countries: argentina
-  players: messi
+  countries: argentina, england
+  players: messi, rooney
 
 bryce:
   name: Bryce
+  countries: brazil, spain
+  players: neymar, silva
+  
+damon:
+  name: Damon
+  countries: argentina, spain
+  players: messi, silva

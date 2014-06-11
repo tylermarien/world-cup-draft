@@ -63,6 +63,21 @@ class Country < ActiveRecord::Base
     self.goals_for - self.goals_against
   end
   
+  def shutouts
+    shutouts = 0
+    self.home_matches.where(played: true).each do |m|
+      if m.away_goals == 0
+        shutouts += 1
+      end
+    end
+    self.away_matches.where(played: true).each do |m|
+      if m.home_goals == 0
+        shutouts += 1
+      end
+    end
+    return shutouts      
+  end
+  
   def to_s
     name
   end

@@ -7,11 +7,8 @@ class Team < ActiveRecord::Base
       + self.calculate_points_from_wins \
       + self.calculate_points_from_ties \
       + self.calculate_points_from_goal_differential \
+      + self.calculate_points_from_shutouts \
       + self.calculate_points_from_goals
-  end
-  
-  def calculate_points_from_goals
-    players.reduce(0) { |sum, p| sum + (p.calculate_goals * 2) }
   end
   
   def calculate_points_from_matches_played
@@ -28,6 +25,14 @@ class Team < ActiveRecord::Base
   
   def calculate_points_from_goal_differential
     countries.reduce(0) { |sum, c| sum + c.goal_differential }
+  end  
+  
+  def calculate_points_from_shutouts
+    countries.reduce(0) { |sum, c| sum + c.shutouts }
+  end
+  
+  def calculate_points_from_goals
+    players.reduce(0) { |sum, p| sum + (p.calculate_goals * 2) }
   end  
   
   def to_s

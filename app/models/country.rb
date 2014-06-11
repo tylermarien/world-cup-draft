@@ -37,6 +37,32 @@ class Country < ActiveRecord::Base
     return ties
   end
   
+  def goals_for
+    goals = 0
+    self.home_matches.where(played: true).each do |m|
+      goals += m.home_goals
+    end
+    self.away_matches.where(played: true).each do |m|
+      goals += m.away_goals
+    end
+    return goals
+  end
+  
+  def goals_against
+    goals = 0
+    self.home_matches.where(played: true).each do |m|
+      goals += m.away_goals
+    end
+    self.away_matches.where(played: true).each do |m|
+      goals += m.home_goals
+    end
+    return goals    
+  end
+  
+  def goal_differential
+    self.goals_for - self.goals_against
+  end
+  
   def to_s
     name
   end

@@ -16,6 +16,18 @@ class CountryTest < ActiveSupport::TestCase
   
   test "should return the correct number of ties" do
     assert_equal 0, countries(:argentina).ties
+  end
+  
+  test "should return the correct number of goals for argentina" do
+    assert_equal 1, countries(:argentina).goals_for
+  end
+  
+  test "should return the correct number of goals against argentina" do
+    assert_equal 0, countries(:argentina).goals_against
+  end
+  
+  test "should return the correct goal differential for argentina" do
+    assert_equal 1, countries(:argentina).goal_differential
   end  
 
 end

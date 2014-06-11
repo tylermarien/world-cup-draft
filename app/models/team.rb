@@ -3,10 +3,11 @@ class Team < ActiveRecord::Base
   has_and_belongs_to_many :players
   
   def calculate_total
-    self.calculate_points_from_goals \
-      + self.calculate_points_from_matches_played \
+    self.calculate_points_from_matches_played \
       + self.calculate_points_from_wins \
-      + self.calculate_points_from_goal_differential
+      + self.calculate_points_from_ties \
+      + self.calculate_points_from_goal_differential \
+      + self.calculate_points_from_goals
   end
   
   def calculate_points_from_goals
@@ -22,7 +23,7 @@ class Team < ActiveRecord::Base
   end
   
   def calculate_points_from_ties
-    0
+    countries.reduce(0) { |sum, c| sum + (c.ties * 2) }
   end
   
   def calculate_points_from_goal_differential

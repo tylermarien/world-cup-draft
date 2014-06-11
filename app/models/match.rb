@@ -17,6 +17,10 @@ class Match < ActiveRecord::Base
     return nil
   end
   
+  def tie?
+    self.home_goals == self.away_goals
+  end
+  
   def to_s
     home.name + " vs " + away.name
   end

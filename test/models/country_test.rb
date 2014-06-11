@@ -13,5 +13,9 @@ class CountryTest < ActiveSupport::TestCase
   test "should return the correct number of wins" do
     assert_equal 1, countries(:argentina).wins
   end
+  
+  test "should return the correct number of ties" do
+    assert_equal 0, countries(:argentina).ties
+  end  
 
 end

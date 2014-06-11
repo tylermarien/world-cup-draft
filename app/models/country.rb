@@ -11,6 +11,10 @@ class Country < ActiveRecord::Base
     self.home_matches.count { |m| m.winning_team.id == self.id } + self.away_matches.count { |m| m.winning_team.id == self.id }
   end
   
+  def ties
+    0
+  end
+  
   def to_s
     name
   end

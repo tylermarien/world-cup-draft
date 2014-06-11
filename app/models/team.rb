@@ -18,6 +18,10 @@ class Team < ActiveRecord::Base
     countries.inject(0) { |sum, c| sum + (c.wins * 4) }
   end
   
+  def calculate_points_from_ties
+    0
+  end  
+  
   def to_s
     name
   end

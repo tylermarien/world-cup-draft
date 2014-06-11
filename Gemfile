@@ -5,8 +5,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.1'
 # Use Devise for authentication
 gem 'devise'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Compass
@@ -30,6 +28,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :development do
+  gem 'sqlite3'
   gem 'guard', '>= 2.2.2',       :require => false
   gem 'guard-minitest'
   gem 'guard-livereload',        :require => false
@@ -37,6 +36,11 @@ group :development do
   gem 'rb-fsevent',              :require => false
   gem 'spring'
   gem 'terminal-notifier-guard'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 # Use ActiveModel has_secure_password

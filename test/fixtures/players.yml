@@ -7,3 +7,11 @@ messi:
 neymar:
   name: Neymar
   country: brazil
+  
+rooney:
+  name: Wayne Rooney
+  country: england
+  
+silva:
+  name: David Silva
+  country: spain

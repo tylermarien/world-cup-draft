@@ -12,6 +12,14 @@ a {
   }
 }
 
+strong {
+  font-weight: bold;
+}
+
+ul {
+  margin: 0.5em 1em;
+}
+
 h1 {
   @include adjust-font-size-to(28px);
 }

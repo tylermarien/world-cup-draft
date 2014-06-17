@@ -42,12 +42,12 @@ class Country < ActiveRecord::Base
   def shutouts
     shutouts = 0
     self.home_matches.where(status: "Final").each do |m|
-      if m.away_goals == 0
+      if m.away_score == 0
         shutouts += 1
       end
     end
     self.away_matches.where(status: "Final").each do |m|
-      if m.home_goals == 0
+      if m.home_score == 0
         shutouts += 1
       end
     end

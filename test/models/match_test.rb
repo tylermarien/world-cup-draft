@@ -3,11 +3,11 @@ require 'test_helper'
 class MatchTest < ActiveSupport::TestCase
 
   test "should return the correct number of goals scored by home team" do
-    assert_equal 1, matches(:one).home_goals
+    assert_equal 1, matches(:one).home_score
   end
   
   test "should return the correct number of goals scored by away team" do
-    assert_equal 0, matches(:one).away_goals
+    assert_equal 0, matches(:one).away_score
   end
   
   test "should return the winning team" do

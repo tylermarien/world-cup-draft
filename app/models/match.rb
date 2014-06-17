@@ -1,24 +1,38 @@
+require 'httparty'
+
 class Match < ActiveRecord::Base
   belongs_to :home, class_name: "Country"
   belongs_to :away, class_name: "Country"
   has_many :goals
   
-  def home_goals
-    self.goals.where(country_id: self.home.id).count
-  end
+  include HTTParty
+  base_uri 'http://worldcup.kimonolabs.com/api'
+  default_params apikey: '579797cddf38492d583969f7517a866c'
+  format :json  
   
-  def away_goals
-    self.goals.where(country_id: self.away.id).count
-  end
+  def self.import
+    response = get('/matches')
+    json = JSON.parse(response.body)
+    json.each do |m|
+      match = Match.find_or_initialize_by(api_id: m['id'])
+      match.occurs_at = m['startTime']
+      match.home = Country.find_by(api_id: m['homeTeamId'])
+      match.away = Country.find_by(api_id: m['homeTeamId'])
+      match.home_score = m['home_score']
+      match.away_score = m['away_score']
+      match.status = m['status']
+      match.save
+    end    
+  end  
   
   def winning_country
-    return self.home if self.home_goals > self.away_goals
-    return self.away if self.away_goals > self.home_goals
+    return self.home if self.home_score > self.away_score
+    return self.away if self.away_score > self.home_score
     return nil
   end
   
   def tie?
-    self.home_goals == self.away_goals
+    self.home_score == self.away_score
   end
   
   def to_s

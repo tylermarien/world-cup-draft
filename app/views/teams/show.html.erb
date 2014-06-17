@@ -3,7 +3,7 @@
   <%= @team.name %>
 </p>
 <p>
-  <strong>Countries:</strong>
+  <strong>Countries (<%= @team.countries.count %>):</strong>
 </p>
 <ul>
 <% @team.countries.each do |country| %>
@@ -11,7 +11,7 @@
 <% end %>
 </ul>
 <p>
-  <strong>Players:</strong>
+  <strong>Players (<%= @team.players.count %>):</strong>
 </p>
 <ul>
 <% @team.players.each do |player| %>

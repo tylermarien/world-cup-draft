@@ -1,4 +1,4 @@
-class PlayersController < ApplicationController
+class Admin::PlayersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_player, only: [:show, :edit, :update, :destroy]
 
@@ -29,7 +29,7 @@ class PlayersController < ApplicationController
 
     respond_to do |format|
       if @player.save
-        format.html { redirect_to @player, notice: 'Player was successfully created.' }
+        format.html { redirect_to admin_player_path(@player), notice: 'Player was successfully created.' }
         format.json { render :show, status: :created, location: @player }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class PlayersController < ApplicationController
   def update
     respond_to do |format|
       if @player.update(player_params)
-        format.html { redirect_to @player, notice: 'Player was successfully updated.' }
+        format.html { redirect_to admin_player_path(@player), notice: 'Player was successfully updated.' }
         format.json { render :show, status: :ok, location: @player }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class PlayersController < ApplicationController
   def destroy
     @player.destroy
     respond_to do |format|
-      format.html { redirect_to players_url, notice: 'Player was successfully destroyed.' }
+      format.html { redirect_to admin_players_url, notice: 'Player was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -65,7 +65,7 @@ class PlayersController < ApplicationController
   # GET /players/import
   def import
     Player.import
-    redirect_to players_url
+    redirect_to admin_players_url
   end
 
   private

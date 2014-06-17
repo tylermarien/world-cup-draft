@@ -2,19 +2,14 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'countries/import', to: 'countries#import', as: 'import_countries'
     get 'matches/import', to: 'matches#import', as: 'import_matches'
+    get 'players/import', to: 'players#import', as: 'import_players'
   
-    resources :countries, :matches
+    resources :countries, :matches, :players
   end    
 
   resources :teams
 
   devise_for :users
-
-  get 'players/import', to: 'players#import', as: 'import_players'
-  resources :players
-
-
-  
 
   root 'welcome#index'
   

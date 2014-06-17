@@ -32,7 +32,7 @@ class Team < ActiveRecord::Base
   end
   
   def calculate_points_from_goals
-    players.reduce(0) { |sum, p| sum + (p.calculate_goals * 2) }
+    players.reduce(0) { |sum, p| sum + (p.goals * 2) }
   end  
   
   def to_s

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :matches
 
+  get 'players/import', to: 'players#import', as: 'import_players'
   resources :players
 
   get 'countries/import', to: 'countries#import', as: 'import_countries'

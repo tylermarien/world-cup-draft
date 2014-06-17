@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140617042731) do
+ActiveRecord::Schema.define(version: 20140617053639) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
@@ -64,6 +64,11 @@ ActiveRecord::Schema.define(version: 20140617042731) do
     t.integer  "country_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "api_id"
+    t.string   "image"
+    t.integer  "goals"
+    t.integer  "own_goals"
+    t.integer  "penalty_goals"
   end
 
   add_index "players", ["country_id"], name: "index_players_on_country_id"

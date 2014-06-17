@@ -61,6 +61,12 @@ class PlayersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  # GET /players/import
+  def import
+    Player.import
+    redirect_to players_url
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

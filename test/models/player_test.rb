@@ -4,7 +4,7 @@ class PlayerTest < ActiveSupport::TestCase
   
   test "should return the correct number of goals" do
     messi = players(:messi)
-    assert_equal 1, messi.calculate_goals
+    assert_equal 1, messi.goals
   end
   
 end

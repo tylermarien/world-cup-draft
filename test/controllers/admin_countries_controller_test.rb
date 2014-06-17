@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CountriesControllerTest < ActionController::TestCase
+class Admin::CountriesControllerTest < ActionController::TestCase
   setup do
     sign_in users(:tyler)
     @country = countries(:argentina)
@@ -22,7 +22,7 @@ class CountriesControllerTest < ActionController::TestCase
       post :create, country: { name: @country.name }
     end
 
-    assert_redirected_to country_path(assigns(:country))
+    assert_redirected_to admin_country_path(assigns(:country))
   end
 
   test "should show country" do
@@ -37,7 +37,7 @@ class CountriesControllerTest < ActionController::TestCase
 
   test "should update country" do
     patch :update, id: @country, country: { name: @country.name }
-    assert_redirected_to country_path(assigns(:country))
+    assert_redirected_to admin_country_path(assigns(:country))
   end
 
   test "should destroy country" do
@@ -45,6 +45,6 @@ class CountriesControllerTest < ActionController::TestCase
       delete :destroy, id: @country
     end
 
-    assert_redirected_to countries_path
+    assert_redirected_to admin_countries_path
   end
 end

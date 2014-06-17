@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PlayersControllerTest < ActionController::TestCase
+class Admin::PlayersControllerTest < ActionController::TestCase
   setup do
     sign_in users(:tyler)
     @player = players(:messi)
@@ -22,7 +22,7 @@ class PlayersControllerTest < ActionController::TestCase
       post :create, player: { country_id: @player.country_id, name: @player.name }
     end
 
-    assert_redirected_to player_path(assigns(:player))
+    assert_redirected_to admin_player_path(assigns(:player))
   end
 
   test "should show player" do
@@ -37,7 +37,7 @@ class PlayersControllerTest < ActionController::TestCase
 
   test "should update player" do
     patch :update, id: @player, player: { country_id: @player.country_id, name: @player.name }
-    assert_redirected_to player_path(assigns(:player))
+    assert_redirected_to admin_player_path(assigns(:player))
   end
 
   test "should destroy player" do
@@ -45,6 +45,6 @@ class PlayersControllerTest < ActionController::TestCase
       delete :destroy, id: @player
     end
 
-    assert_redirected_to players_path
+    assert_redirected_to admin_players_path
   end
 end

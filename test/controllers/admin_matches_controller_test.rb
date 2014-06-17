@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MatchesControllerTest < ActionController::TestCase
+class Admin::MatchesControllerTest < ActionController::TestCase
   setup do
     sign_in users(:tyler)
     @match = matches(:one)
@@ -22,7 +22,7 @@ class MatchesControllerTest < ActionController::TestCase
       post :create, match: { away_id: @match.away_id, home_id: @match.home_id, occurs_at: @match.occurs_at }
     end
 
-    assert_redirected_to match_path(assigns(:match))
+    assert_redirected_to admin_match_path(assigns(:match))
   end
 
   test "should show match" do
@@ -37,7 +37,7 @@ class MatchesControllerTest < ActionController::TestCase
 
   test "should update match" do
     patch :update, id: @match, match: { away_id: @match.away_id, home_id: @match.home_id, occurs_at: @match.occurs_at }
-    assert_redirected_to match_path(assigns(:match))
+    assert_redirected_to admin_match_path(assigns(:match))
   end
 
   test "should destroy match" do
@@ -45,6 +45,6 @@ class MatchesControllerTest < ActionController::TestCase
       delete :destroy, id: @match
     end
 
-    assert_redirected_to matches_path
+    assert_redirected_to admin_matches_path
   end
 end

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TeamsControllerTest < ActionController::TestCase
+class Admin::TeamsControllerTest < ActionController::TestCase
   setup do
     sign_in users(:tyler)
     @team = teams(:tyler)
@@ -22,7 +22,7 @@ class TeamsControllerTest < ActionController::TestCase
       post :create, team: { name: @team.name }
     end
 
-    assert_redirected_to team_path(assigns(:team))
+    assert_redirected_to admin_team_path(assigns(:team))
   end
 
   test "should show team" do
@@ -37,7 +37,7 @@ class TeamsControllerTest < ActionController::TestCase
 
   test "should update team" do
     patch :update, id: @team, team: { name: @team.name }
-    assert_redirected_to team_path(assigns(:team))
+    assert_redirected_to admin_team_path(assigns(:team))
   end
 
   test "should destroy team" do
@@ -45,6 +45,6 @@ class TeamsControllerTest < ActionController::TestCase
       delete :destroy, id: @team
     end
 
-    assert_redirected_to teams_path
+    assert_redirected_to admin_teams_path
   end
 end

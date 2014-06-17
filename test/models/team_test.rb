@@ -7,7 +7,7 @@ class TeamTest < ActiveSupport::TestCase
   end
   
   test "should return the correct total" do
-    assert_equal 15, @tyler.calculate_total
+    assert_equal 16, @tyler.calculate_total
   end
   
   test "should return the correct points from matches played" do
@@ -23,7 +23,7 @@ class TeamTest < ActiveSupport::TestCase
   end
   
   test "should return the correct points from goal differential" do
-    assert_equal -1, @tyler.calculate_points_from_goal_differential
+    assert_equal 0, @tyler.calculate_points_from_goal_differential
   end
   
   test "should return the correct points from shutouts" do

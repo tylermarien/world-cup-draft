@@ -61,6 +61,12 @@ class CountriesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  # GET /countries/import
+  def import
+    Country.import
+    redirect_to countries_url
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

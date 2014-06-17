@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   resources :players
 
+  get 'countries/import', to: 'countries#import', as: 'import_countries'
   resources :countries
+  
 
   root 'welcome#index'
   

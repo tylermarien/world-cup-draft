@@ -1,62 +1,37 @@
+require 'httparty'
+
 class Country < ActiveRecord::Base
   has_and_belongs_to_many :teams
   has_many :home_matches, class_name: 'Match', foreign_key: 'home_id'
   has_many :away_matches, class_name: 'Match', foreign_key: 'away_id'
   
-  def matches_played
-    self.home_matches.where(played: true).count + self.away_matches.where(played: true).count
-  end
+  include HTTParty
+  base_uri 'http://worldcup.kimonolabs.com/api'
+  default_params apikey: '579797cddf38492d583969f7517a866c'
+  format :json  
   
-  def wins
-    wins = 0
-    self.home_matches.where(played: true).each do |m|
-      if !m.winning_country.nil? && m.winning_country.id == self.id
-        wins = wins + 1
-      end
-    end
-    self.away_matches.where(played: true).each do |m|
-      if !m.winning_country.nil? && m.winning_country.id == self.id
-        wins = wins + 1
-      end
+  def self.import
+    response = get('/teams')
+    json = JSON.parse(response.body)
+    json.each do |team|
+      country = Country.find_or_initialize_by(api_id: team['id'])
+      country.name = team['name']
+      country.logo = team['logo']
+      country.group = team['group']
+      country.group_rank = team['groupRank']
+      country.group_points = team['groupPoints']
+      country.matches_played = team['matchesPlayed']
+      country.wins = team['wins']
+      country.losses = team['losses']
+      country.draws = team['draws']
+      country.goals_for = team['goalsFor']
+      country.goals_against = team['goalsAgainst']
+      country.save
     end    
-    return wins
   end
   
   def ties
-    ties = 0
-    self.home_matches.where(played: true).each do |m|
-      if m.tie?
-        ties = ties + 1
-      end
-    end
-    self.away_matches.where(played: true).each do |m|
-      if m.tie?
-        ties = ties + 1
-      end
-    end
-    return ties
-  end
-  
-  def goals_for
-    goals = 0
-    self.home_matches.where(played: true).each do |m|
-      goals += m.home_goals
-    end
-    self.away_matches.where(played: true).each do |m|
-      goals += m.away_goals
-    end
-    return goals
-  end
-  
-  def goals_against
-    goals = 0
-    self.home_matches.where(played: true).each do |m|
-      goals += m.away_goals
-    end
-    self.away_matches.where(played: true).each do |m|
-      goals += m.home_goals
-    end
-    return goals    
+    self.draws 
   end
   
   def goal_differential

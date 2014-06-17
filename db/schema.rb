@@ -11,12 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140610033736) do
+ActiveRecord::Schema.define(version: 20140617042731) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "api_id"
+    t.string   "logo"
+    t.string   "group"
+    t.integer  "group_rank"
+    t.integer  "group_points"
+    t.integer  "matches_played"
+    t.integer  "wins"
+    t.integer  "losses"
+    t.integer  "draws"
+    t.integer  "goals_for"
+    t.integer  "goals_against"
   end
 
   create_table "countries_teams", id: false, force: true do |t|

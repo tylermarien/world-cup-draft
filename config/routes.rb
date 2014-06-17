@@ -4,13 +4,10 @@ Rails.application.routes.draw do
     get 'matches/import', to: 'matches#import', as: 'import_matches'
     get 'players/import', to: 'players#import', as: 'import_players'
   
-    resources :countries, :matches, :players
+    resources :countries, :matches, :players, :teams
   end    
 
-  resources :teams
-
   devise_for :users
-
   root 'welcome#index'
   
   # The priority is based upon order of creation: first created -> highest priority.

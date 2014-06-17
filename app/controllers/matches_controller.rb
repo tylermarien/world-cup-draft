@@ -5,7 +5,7 @@ class MatchesController < ApplicationController
   # GET /matches
   # GET /matches.json
   def index
-    @matches = Match.all
+    @matches = Match.all.order(:occurs_at)
   end
 
   # GET /matches/1
@@ -60,6 +60,12 @@ class MatchesController < ApplicationController
       format.html { redirect_to matches_url, notice: 'Match was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  # GET /matches/import/
+  def import
+    Match.import
+    redirect_to matches_url
   end
 
   private

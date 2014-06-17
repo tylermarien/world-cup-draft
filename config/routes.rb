@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :teams
 
   devise_for :users
+  
+  get 'matches/import', to: 'matches#import', as: 'import_matches'
   resources :matches
 
   get 'players/import', to: 'players#import', as: 'import_players'

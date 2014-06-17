@@ -17,9 +17,9 @@ class Match < ActiveRecord::Base
       match = Match.find_or_initialize_by(api_id: m['id'])
       match.occurs_at = m['startTime']
       match.home = Country.find_by(api_id: m['homeTeamId'])
-      match.away = Country.find_by(api_id: m['homeTeamId'])
-      match.home_score = m['home_score']
-      match.away_score = m['away_score']
+      match.away = Country.find_by(api_id: m['awayTeamId'])
+      match.home_score = m['homeScore']
+      match.away_score = m['awayScore']
       match.status = m['status']
       match.save
     end    

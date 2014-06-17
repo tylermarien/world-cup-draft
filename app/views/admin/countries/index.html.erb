@@ -1,0 +1,26 @@
+<h1>Listing countries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @countries.each do |country| %>
+      <tr>
+        <td><%= country.name %></td>
+        <td><%= link_to 'Show', admin_country_path(country) %></td>
+        <td><%= link_to 'Edit', edit_admin_country_path(country) %></td>
+        <td><%= link_to 'Destroy', admin_country_path(country), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Country', new_admin_country_path %> |
+<%= link_to 'Import Countries', admin_import_countries_path %>

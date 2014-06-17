@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :goals
+  namespace :admin do
+    get 'countries/import', to: 'countries#import', as: 'import_countries'
+    resources :countries
+  end    
 
   resources :teams
 
@@ -11,8 +14,7 @@ Rails.application.routes.draw do
   get 'players/import', to: 'players#import', as: 'import_players'
   resources :players
 
-  get 'countries/import', to: 'countries#import', as: 'import_countries'
-  resources :countries
+
   
 
   root 'welcome#index'

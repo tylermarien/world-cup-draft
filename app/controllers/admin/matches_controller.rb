@@ -1,4 +1,4 @@
-class MatchesController < ApplicationController
+class Admin::MatchesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_match, only: [:show, :edit, :update, :destroy]
 
@@ -29,7 +29,7 @@ class MatchesController < ApplicationController
 
     respond_to do |format|
       if @match.save
-        format.html { redirect_to @match, notice: 'Match was successfully created.' }
+        format.html { redirect_to admin_matches_path(@match), notice: 'Match was successfully created.' }
         format.json { render :show, status: :created, location: @match }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class MatchesController < ApplicationController
   def update
     respond_to do |format|
       if @match.update(match_params)
-        format.html { redirect_to @match, notice: 'Match was successfully updated.' }
+        format.html { redirect_to admin_matches_path(@match), notice: 'Match was successfully updated.' }
         format.json { render :show, status: :ok, location: @match }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class MatchesController < ApplicationController
   def destroy
     @match.destroy
     respond_to do |format|
-      format.html { redirect_to matches_url, notice: 'Match was successfully destroyed.' }
+      format.html { redirect_to admin_matches_url, notice: 'Match was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -65,7 +65,7 @@ class MatchesController < ApplicationController
   # GET /matches/import/
   def import
     Match.import
-    redirect_to matches_url
+    redirect_to admin_matches_url
   end
 
   private

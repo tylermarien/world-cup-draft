@@ -16,9 +16,9 @@
         <td><%= match.occurs_at.to_formatted_s(:long) %></td>
         <td><%= match.home.name %></td>
         <td><%= match.away.name %></td>
-        <td><%= link_to 'Show', match %></td>
-        <td><%= link_to 'Edit', edit_match_path(match) %></td>
-        <td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', admin_match_path(match) %></td>
+        <td><%= link_to 'Edit', edit_admin_match_path(match) %></td>
+        <td><%= link_to 'Destroy', admin_match_path(match), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,5 +26,5 @@
 
 <br>
 
-<%= link_to 'New Match', new_match_path %> |
-<%= link_to 'Import Matches', import_matches_path %>
+<%= link_to 'New Match', new_admin_match_path %> |
+<%= link_to 'Import Matches', admin_import_matches_path %>

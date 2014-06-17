@@ -36,7 +36,18 @@ class Country < ActiveRecord::Base
   end
   
   def goal_differential
-    self.goals_for - self.goals_against
+    difference = 0
+    self.home_matches.where(status: "Final").each do |m|
+      if m.home_score > m.away_score
+        difference += m.home_score - m.away_score
+      end
+    end
+    self.away_matches.where(status: "Final").each do |m|
+      if m.away_score > m.home_score
+        difference += m.away_score - m.home_score
+      end
+    end
+    return shutouts 
   end
   
   def shutouts

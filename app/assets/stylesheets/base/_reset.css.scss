@@ -1,2 +1,6 @@
 @include global-reset;
 @include establish-baseline;
+
+body {
+  padding-bottom: 100px;
+}

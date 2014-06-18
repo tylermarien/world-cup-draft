@@ -2,6 +2,7 @@ $grids: 1 3;
 $gutters: 1/3;
 
 .main-container {
+  @include clearfix;
   margin: 0 auto;
   padding-top: rhythm(2);
   width: 1200px;

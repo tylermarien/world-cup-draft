@@ -4,6 +4,8 @@ class Player < ActiveRecord::Base
   belongs_to :country
   has_and_belongs_to_many :teams
   
+  scope :most_popular, -> { select("#{Player.table_name}.*, COUNT(#{Team.table_name}.id) AS number_of_teams").joins(:teams).group("#{Player.table_name}.id").order("COUNT(#{Team.table_name}.id) DESC") }
+  
   include HTTParty
   base_uri 'http://worldcup.kimonolabs.com/api'
   default_params apikey: '579797cddf38492d583969f7517a866c'

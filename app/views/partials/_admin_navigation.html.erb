@@ -1,5 +1,6 @@
 <% if user_signed_in? %>
-<nav id="primary-navigation">        
+<nav id="primary-navigation">
+  <h2>Admin</h2>        
   <ul>
     <li><%= link_to t('nav.teams'), admin_teams_path %></li>
     <li><%= link_to t('nav.countries'), admin_countries_path %></li>

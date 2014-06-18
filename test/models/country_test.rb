@@ -31,7 +31,7 @@ class CountryTest < ActiveSupport::TestCase
   end
   
   test "should return the correct goal differential for spain" do
-    assert_equal 0, countries(:spain).goal_differential
+    assert_equal 2, countries(:spain).goal_differential
   end  
   
   test "should return the correct number of shutouts" do

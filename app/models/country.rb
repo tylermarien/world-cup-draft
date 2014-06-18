@@ -77,7 +77,7 @@ class Country < ActiveRecord::Base
         difference += m.away_score - m.home_score
       end
     end
-    return shutouts 
+    return difference 
   end
   
   def shutouts

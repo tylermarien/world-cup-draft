@@ -6,6 +6,8 @@ class Country < ActiveRecord::Base
   has_many :home_matches, class_name: 'Match', foreign_key: 'home_id'
   has_many :away_matches, class_name: 'Match', foreign_key: 'away_id'
   
+  scope :most_popular, -> { select("#{Country.table_name}.*, COUNT(#{Team.table_name}.id) AS number_of_teams").joins(:teams).group("#{Country.table_name}.id").order("COUNT(#{Team.table_name}.id) DESC") }
+  
   include HTTParty
   base_uri 'http://worldcup.kimonolabs.com/api'
   default_params apikey: '579797cddf38492d583969f7517a866c'

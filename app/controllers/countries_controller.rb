@@ -7,7 +7,7 @@ class CountriesController < ApplicationController
   
   # GET /countries/most_popular
   def most_popular
-    @countries = Country.all.select("#{Country.table_name}.*, COUNT(#{Team.table_name}.id) AS number_of_teams").joins(:teams).group("#{Country.table_name}.id").order("COUNT(#{Team.table_name}.id) DESC")
+    @countries = Country.most_popular
   end
   
 end

@@ -31,6 +31,34 @@ class Country < ActiveRecord::Base
     end    
   end
   
+  def calculate_total
+    self.calculate_points_from_matches_played \
+      + self.calculate_points_from_wins \
+      + self.calculate_points_from_ties \
+      + self.calculate_points_from_goal_differential \
+      + self.calculate_points_from_shutouts    
+  end
+  
+  def calculate_points_from_matches_played
+    matches_played
+  end
+  
+  def calculate_points_from_wins
+    wins * 4
+  end
+  
+  def calculate_points_from_ties
+    draws * 2
+  end
+  
+  def calculate_points_from_goal_differential
+    goal_differential
+  end  
+  
+  def calculate_points_from_shutouts
+    shutouts
+  end  
+  
   def ties
     self.draws 
   end

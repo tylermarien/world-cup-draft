@@ -7,7 +7,7 @@
 </p>
 <ul>
 <% @team.countries.each do |country| %>
-  <li><%= country.name %></li>
+  <li><%= country.name %> (<%= country.calculate_total %> points)</li>
 <% end %>
 </ul>
 <p>

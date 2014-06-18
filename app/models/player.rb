@@ -9,6 +9,14 @@ class Player < ActiveRecord::Base
   default_params apikey: '579797cddf38492d583969f7517a866c'
   format :json
   
+  def calculate_total
+    calculate_points_from_goals
+  end
+  
+  def calculate_points_from_goals
+    goals * 2
+  end  
+  
   def self.import
     response = get('/players', query: {limit: 1000})
     json = JSON.parse(response.body)

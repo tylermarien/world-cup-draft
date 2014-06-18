@@ -1,22 +1,20 @@
+<h1><%= @team.name %></h1>
 <p>
-  <strong>Name:</strong>
-  <%= @team.name %>
+  <strong>Points:</strong>
+  <%= @team.calculate_total %>
 </p>
-<p>
-  <strong>Countries (<%= @team.countries.count %>):</strong>
-</p>
-<ul>
+<ul class="team-and-player-list">
 <% @team.countries.each do |country| %>
-  <li><%= country.name %> (<%= country.calculate_total %> points)</li>
+  <li>
+    <strong><%= country.name %> (<%= country.calculate_total %> points)</strong>
+    <ul>
+    <% @team.players.where(country_id: country.id).each do |player| %>
+      <li><%= player.name %> (<%= player.calculate_total %> points)</li>
+    <% end %>
+    </ul>    
+  </li>
 <% end %>
 </ul>
-<p>
-  <strong>Players (<%= @team.players.count %>):</strong>
-</p>
-<ul>
-<% @team.players.each do |player| %>
-  <li><%= player.name %></li>
-<% end %>
-</ul>
+
 
 <%= link_to 'Home', root_path %>

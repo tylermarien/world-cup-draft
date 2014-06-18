@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'welcome#index'
+  get '/countries/most_popular', to: 'countries#most_popular', as: 'most_popular_countries'
   get '/countries/:id', to: 'countries#show', as: 'country'
   get '/teams/:id', to: 'teams#show', as: 'team'
   

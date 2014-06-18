@@ -23,6 +23,7 @@ en:
   app:
     name: "World Cup Draft"
   nav:
+    home: "Home"
     teams: "Teams"
     countries: "Countries"
     players: "Players"

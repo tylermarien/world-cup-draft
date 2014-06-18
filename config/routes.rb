@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'welcome#index'
+  get '/countries/:id', to: 'countries#show', as: 'country'
   get '/teams/:id', to: 'teams#show', as: 'team'
   
   # The priority is based upon order of creation: first created -> highest priority.

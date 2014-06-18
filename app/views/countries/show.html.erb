@@ -1,0 +1,26 @@
+<p>
+  <strong>Name:</strong>
+  <%= @country.name %>
+</p>
+<p>
+  <strong>Games Played:</strong>
+  <%= @country.matches_played %> (<%= pluralize(@country.calculate_points_from_matches_played, 'point') %>)
+</p>
+<p>
+  <strong>Wins:</strong>
+  <%= @country.wins %> (<%= pluralize(@country.calculate_points_from_wins, 'point') %>)
+</p>
+<p>    
+  <strong>Ties:</strong>
+  <%= @country.ties %> (<%= pluralize(@country.calculate_points_from_ties, 'point') %>)
+</p>
+<p>    
+  <strong>Goal Differential:</strong>
+  <%= @country.goal_differential %> (<%= pluralize(@country.calculate_points_from_goal_differential, 'point') %>)
+</p>
+<p>    
+  <strong>Shutouts:</strong>
+  <%= @country.shutouts %> (<%= pluralize(@country.calculate_points_from_shutouts, 'point') %>)
+</p>    
+
+<%= link_to 'Home', root_path %>

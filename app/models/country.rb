@@ -63,7 +63,21 @@ class Country < ActiveRecord::Base
   
   def calculate_points_from_shutouts
     shutouts
-  end  
+  end
+  
+  def calculate_points_from_group_rank
+    return 0 unless group.completed?
+    case group_rank
+    when 1
+      return 4
+    when 2
+      return 2
+    when 3
+      return 1
+    else
+      return 0
+    end
+  end
   
   def ties
     self.draws 

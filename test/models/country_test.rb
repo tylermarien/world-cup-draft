@@ -56,6 +56,26 @@ class CountryTest < ActiveSupport::TestCase
   
   test "should return the correct points from shutouts" do
     assert_equal 3, countries(:argentina).calculate_points_from_shutouts
-  end  
+  end
+  
+  test "should return no points for group rank if group is not completed" do
+    assert_equal 0, countries(:netherlands).calculate_points_from_group_rank
+  end
+  
+  test "should return 4 points for coming first in group" do
+    assert_equal 4, countries(:argentina).calculate_points_from_group_rank
+  end
+  
+  test "should return 2 points for coming second in group" do
+    assert_equal 2, countries(:brazil).calculate_points_from_group_rank
+  end
+  
+  test "should return 1 points for coming third in group" do
+    assert_equal 1, countries(:spain).calculate_points_from_group_rank
+  end
+  
+  test "should return 0 points for coming fourth in group" do
+    assert_equal 0, countries(:england).calculate_points_from_group_rank
+  end
 
 end

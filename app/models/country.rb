@@ -18,8 +18,8 @@ class Country < ActiveRecord::Base
     response = get('/teams')
     json = JSON.parse(response.body)
     json.each do |team|
-      group = Group.find_or_initialize_by(name: team['group'])
-      group.save
+      #group = Group.find_or_initialize_by(name: team['group'])
+      #group.save
       
       country = Country.find_or_initialize_by(api_id: team['id'])
       country.name = team['name']
@@ -32,7 +32,7 @@ class Country < ActiveRecord::Base
       country.draws = team['draws']
       country.goals_for = team['goalsFor']
       country.goals_against = team['goalsAgainst']
-      country.group = group
+      country.group = Group.find_by(name: team['group'])
       country.save
     end    
   end

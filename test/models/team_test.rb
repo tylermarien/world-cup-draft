@@ -14,4 +14,8 @@ class TeamTest < ActiveSupport::TestCase
     assert_equal 34, @tyler.calculate_total
   end
   
+  test "should return the correct number of countries remaining" do
+    assert_equal 1, @tyler.countries_remaining
+  end
+  
 end

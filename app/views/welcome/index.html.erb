@@ -3,6 +3,7 @@
     <tr>
       <th>Team</th>
       <th>Games Played</th>
+      <th>Teams Remaining</th>
       <th>Points</th>
     </tr>
   </thead>
@@ -11,6 +12,7 @@
     <tr>
       <td><%= link_to team, team %></td>
       <td><%= team.matches_played %></td>
+      <td><%= team.countries_remaining %></td>
       <td><%= team.calculate_total %></td>
     </tr>
     <% end %>

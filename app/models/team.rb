@@ -6,6 +6,10 @@ class Team < ActiveRecord::Base
     countries.reduce(0) { |sum, c| sum + c.matches_played }
   end
   
+  def countries_remaining
+    countries.to_a.count { |c| !c.eliminated? }
+  end
+  
   def calculate_total
     calculate_points_from_countries + calculate_points_from_players
   end

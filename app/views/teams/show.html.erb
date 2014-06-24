@@ -7,6 +7,9 @@
 <% @team.countries.each do |country| %>
   <li>
     <strong><%= link_to country, country %> (<%= country.calculate_total %> points)</strong>
+    <% if country.eliminated? %>
+      - Eliminated
+    <% end %>
     <ul>
     <% @team.players.where(country_id: country.id).each do |player| %>
       <li><%= player.name %> (<%= player.calculate_total %> points)</li>

@@ -2,6 +2,10 @@ class Team < ActiveRecord::Base
   has_and_belongs_to_many :countries
   has_and_belongs_to_many :players
   
+  def matches_played
+    countries.reduce(0) { |sum, c| sum + c.matches_played }
+  end
+  
   def calculate_total
     calculate_points_from_countries + calculate_points_from_players
   end

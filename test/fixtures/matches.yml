@@ -30,4 +30,20 @@ four:
   away: argentina
   home_score: 0
   away_score: 0
-  status: Pre-Game  
+  status: Final
+  
+five:
+  occurs_at: 2014-06-15 20:00:00
+  home: argentina
+  away: england
+  home_score: 2
+  away_score: 0
+  status: Final
+  
+six:
+  occurs_at: 2014-06-16 20:00:00
+  home: brazil
+  away: spain
+  home_score: 2
+  away_score: 0
+  status: Final  

@@ -7,7 +7,7 @@ class TeamTest < ActiveSupport::TestCase
   end
   
   test "should return the correct total" do
-    assert_equal 17, @tyler.calculate_total
+    assert_equal 30, @tyler.calculate_total
   end
   
 end

@@ -77,5 +77,9 @@ class CountryTest < ActiveSupport::TestCase
   test "should return 0 points for coming fourth in group" do
     assert_equal 0, countries(:england).calculate_points_from_group_rank
   end
+  
+  test "should return correct total points for argentina" do
+    assert_equal 23, countries(:argentina).calculate_total
+  end
 
 end

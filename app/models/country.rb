@@ -1,6 +1,7 @@
 require 'httparty'
 
 class Country < ActiveRecord::Base
+  belongs_to :group
   has_many :players
   has_and_belongs_to_many :teams
   has_many :home_matches, class_name: 'Match', foreign_key: 'home_id'
@@ -17,10 +18,12 @@ class Country < ActiveRecord::Base
     response = get('/teams')
     json = JSON.parse(response.body)
     json.each do |team|
+      group = Group.find_or_initialize_by(name: team['group'])
+      group.save
+      
       country = Country.find_or_initialize_by(api_id: team['id'])
       country.name = team['name']
       country.logo = team['logo']
-      country.group = team['group']
       country.group_rank = team['groupRank']
       country.group_points = team['groupPoints']
       country.matches_played = team['matchesPlayed']
@@ -29,6 +32,7 @@ class Country < ActiveRecord::Base
       country.draws = team['draws']
       country.goals_for = team['goalsFor']
       country.goals_against = team['goalsAgainst']
+      country.group = group
       country.save
     end    
   end

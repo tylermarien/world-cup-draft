@@ -114,6 +114,12 @@ class Country < ActiveRecord::Base
     return shutouts      
   end
   
+  def eliminated?
+    return false unless group.completed?
+    return true if group_rank == 3 || group_rank == 4
+    return false
+  end
+  
   def to_s
     name
   end

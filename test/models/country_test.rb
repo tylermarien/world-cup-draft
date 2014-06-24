@@ -81,5 +81,17 @@ class CountryTest < ActiveSupport::TestCase
   test "should return correct total points for argentina" do
     assert_equal 23, countries(:argentina).calculate_total
   end
+  
+  test "should not be eliminated if group is not completed" do
+    assert_not countries(:netherlands).eliminated?
+  end
+  
+  test "should be eliminated if finished third or fourth in group" do
+    assert countries(:england).eliminated?
+  end
+  
+  test "should not be eliminated if finished first or second in group" do
+    assert_not countries(:brazil).eliminated?
+  end
 
 end

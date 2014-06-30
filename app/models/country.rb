@@ -91,6 +91,17 @@ class Country < ActiveRecord::Base
     return wins   
   end
   
+  def draws
+    draws = 0
+    home_matches.where(status: "Final").each do |m|
+      draws += 1 if m.tie?
+    end
+    away_matches.where(status: "Final").each do |m|
+      draws += 1 if m.tie?
+    end    
+    return draws 
+  end    
+  
   def ties
     draws 
   end

@@ -17,7 +17,11 @@ class Player < ActiveRecord::Base
   
   def calculate_points_from_goals
     goals * 2
-  end  
+  end
+  
+  def calculate_points_from_shootout_goals
+    shootout_goals
+  end
   
   def self.import
     response = get('/players', query: {limit: 1000})

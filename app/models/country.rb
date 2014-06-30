@@ -80,6 +80,10 @@ class Country < ActiveRecord::Base
     Match.where("status = 'Final' AND (home_id = #{id} OR away_id = #{id})")
   end
   
+  def elimination_matches
+    Match.where("status = 'Final' AND (home_id = #{id} OR away_id = #{id}) AND occurs_at > '2014-06-27 00:00:00'")
+  end
+  
   def matches_played
     home_matches.count(status: "Final") + away_matches.count(status: "Final")
   end
@@ -154,8 +158,10 @@ class Country < ActiveRecord::Base
   end   
   
   def eliminated?
-    return false unless group.completed?
-    return true if group_rank == 3 || group_rank == 4
+    return true if group.completed? && (group_rank == 3 || group_rank == 4)
+    elimination_matches.each do |m|
+      return true if m.winning_country.id != id
+    end
     return false
   end
   

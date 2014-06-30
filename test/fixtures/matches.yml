@@ -61,7 +61,7 @@ six:
   status: Final
 
 seven:
-  occurs_at: 2014-06-17 20:00:00
+  occurs_at: 2014-06-27 20:00:00
   home: argentina
   away: netherlands
   home_score: 0

@@ -34,3 +34,10 @@ netherlands:
   group: b
   group_rank: 1
   group_points: 0
+  
+ecuador:
+  name: Ecuador
+  logo: http://cache.images.globalsportsmedia.com/soccer/teams/150x150/657.png
+  group: b
+  group_rank: 4
+  group_points: 0

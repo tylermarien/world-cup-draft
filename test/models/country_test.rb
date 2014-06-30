@@ -85,5 +85,13 @@ class CountryTest < ActiveSupport::TestCase
   test "should not be eliminated if finished first or second in group" do
     assert_not countries(:brazil).eliminated?
   end
+  
+  test "should return correct number of shootout wins for brazil" do
+    assert_equal 0, countries(:brazil).shootout_wins
+  end
+  
+  test "should return correct number of shootout wins for argentina" do
+    assert_equal 1, countries(:argentina).shootout_wins
+  end
 
 end

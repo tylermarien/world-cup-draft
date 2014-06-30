@@ -142,6 +142,17 @@ class Country < ActiveRecord::Base
     return shutouts      
   end
   
+  def shootout_wins
+    wins = 0
+    home_matches.where(status: "Final").each do |m|
+      wins += 1 if m.home_shootout_score > m.away_shootout_score
+    end
+    away_matches.where(status: "Final").each do |m|
+      wins += 1 if m.away_shootout_score > m.home_shootout_score
+    end
+    return wins
+  end   
+  
   def eliminated?
     return false unless group.completed?
     return true if group_rank == 3 || group_rank == 4

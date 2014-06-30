@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140630164712) do
+ActiveRecord::Schema.define(version: 20140630165517) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 20140630164712) do
     t.integer  "home_score"
     t.integer  "away_score"
     t.string   "status"
+    t.integer  "home_shootout_score"
+    t.integer  "away_shootout_score"
   end
 
   add_index "matches", ["away_id"], name: "index_matches_on_away_id"
@@ -68,6 +70,7 @@ ActiveRecord::Schema.define(version: 20140630164712) do
     t.integer  "goals"
     t.integer  "own_goals"
     t.integer  "penalty_goals"
+    t.integer  "shootout_goals"
   end
 
   add_index "players", ["country_id"], name: "index_players_on_country_id"

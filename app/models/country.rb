@@ -76,40 +76,35 @@ class Country < ActiveRecord::Base
     shootout_wins
   end
   
+  def matches
+    Match.where("status = 'Final' AND (home_id = #{id} OR away_id = #{id})")
+  end
+  
   def matches_played
     home_matches.count(status: "Final") + away_matches.count(status: "Final")
   end
   
   def wins
     wins = 0
-    home_matches.where(status: "Final").each do |m|
+    matches.where(status: "Final").each do |m|
       wins += 1 if m.winning_country.id == id unless m.winning_country.nil?
     end
-    away_matches.where(status: "Final").each do |m|
-      wins += 1 if m.winning_country.id == id unless m.winning_country.nil?
-    end    
     return wins   
   end
   
   def losses
     losses = 0
-    home_matches.where(status: "Final").each do |m|
+    matches.where(status: "Final").each do |m|
       losses += 1 if m.winning_country.id != id unless m.winning_country.nil?
     end
-    away_matches.where(status: "Final").each do |m|
-      losses += 1 if m.winning_country.id != id unless m.winning_country.nil?
-    end    
     return losses   
   end  
   
   def draws
     draws = 0
-    home_matches.where(status: "Final").each do |m|
+    matches.where(status: "Final").each do |m|
       draws += 1 if m.tie?
     end
-    away_matches.where(status: "Final").each do |m|
-      draws += 1 if m.tie?
-    end    
     return draws 
   end    
   

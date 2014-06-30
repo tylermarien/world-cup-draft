@@ -18,9 +18,6 @@ class Country < ActiveRecord::Base
     response = get('/teams')
     json = JSON.parse(response.body)
     json.each do |team|
-      #group = Group.find_or_initialize_by(name: team['group'])
-      #group.save
-      
       country = Country.find_or_initialize_by(api_id: team['id'])
       country.name = team['name']
       country.logo = team['logo']
@@ -78,6 +75,10 @@ class Country < ActiveRecord::Base
     else
       return 0
     end
+  end
+  
+  def matches_played
+    home_matches.count(status: "Final") + away_matches.count(status: "Final")
   end
   
   def wins

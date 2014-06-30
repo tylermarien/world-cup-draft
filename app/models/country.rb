@@ -71,6 +71,10 @@ class Country < ActiveRecord::Base
     end
   end
   
+  def calculate_points_from_shootout_wins
+    shootout_wins
+  end
+  
   def matches_played
     home_matches.count(status: "Final") + away_matches.count(status: "Final")
   end

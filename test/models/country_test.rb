@@ -93,5 +93,13 @@ class CountryTest < ActiveSupport::TestCase
   test "should return correct number of shootout wins for argentina" do
     assert_equal 1, countries(:argentina).shootout_wins
   end
+  
+  test "should return the correct number of points from shootout wins from brazil" do
+    assert_equal 0, countries(:brazil).calculate_points_from_shootout_wins
+  end
+  
+  test "should return the correct number of points from shootout wins from argentina" do
+    assert_equal 1, countries(:argentina).calculate_points_from_shootout_wins
+  end  
 
 end

@@ -24,6 +24,10 @@
       <th><strong>Shutouts:</strong></th>
       <td><%= @country.shutouts %> (<%= pluralize(@country.calculate_points_from_shutouts, 'point') %>)</td>
     </tr>
+    <tr>    
+      <th><strong>Shootout Wins:</strong></th>
+      <td><%= @country.shootout_wins %> (<%= pluralize(@country.calculate_points_from_shootout_wins, 'point') %>)</td>
+    </tr>    
     <% if @country.group.completed? %>
     <tr>    
       <th><strong>Group Rank:</strong></th>

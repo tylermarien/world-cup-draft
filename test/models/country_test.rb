@@ -3,7 +3,7 @@ require 'test_helper'
 class CountryTest < ActiveSupport::TestCase
 
   test "should return the correct number of matches played for argentina" do
-    assert_equal 3, countries(:argentina).matches_played
+    assert_equal 4, countries(:argentina).matches_played
   end
   
   test "should return the correct number of matches played for brazil" do
@@ -11,7 +11,7 @@ class CountryTest < ActiveSupport::TestCase
   end
   
   test "should return the correct number of wins" do
-    assert_equal 2, countries(:argentina).wins
+    assert_equal 3, countries(:argentina).wins
   end
   
   test "should return the correct number of ties" do
@@ -27,7 +27,7 @@ class CountryTest < ActiveSupport::TestCase
   end  
   
   test "should return the correct number of shutouts" do
-    assert_equal 3, countries(:argentina).shutouts
+    assert_equal 4, countries(:argentina).shutouts
   end
   
   test "should return the correct points from matches played" do
@@ -35,7 +35,7 @@ class CountryTest < ActiveSupport::TestCase
   end
   
   test "should return the correct points from wins" do
-    assert_equal 8, countries(:argentina).calculate_points_from_wins
+    assert_equal 12, countries(:argentina).calculate_points_from_wins
   end
   
   test "should return the correct points from ties" do
@@ -47,7 +47,7 @@ class CountryTest < ActiveSupport::TestCase
   end
   
   test "should return the correct points from shutouts" do
-    assert_equal 3, countries(:argentina).calculate_points_from_shutouts
+    assert_equal 4, countries(:argentina).calculate_points_from_shutouts
   end
   
   test "should return no points for group rank if group is not completed" do
@@ -71,7 +71,7 @@ class CountryTest < ActiveSupport::TestCase
   end
   
   test "should return correct total points for argentina" do
-    assert_equal 23, countries(:argentina).calculate_total
+    assert_equal 29, countries(:argentina).calculate_total
   end
   
   test "should not be eliminated if group is not completed" do

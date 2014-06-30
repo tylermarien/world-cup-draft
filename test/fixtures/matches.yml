@@ -6,6 +6,8 @@ one:
   away: brazil
   home_score: 1
   away_score: 0
+  home_shootout_score: 0
+  away_shootout_score: 0  
   status: Final
   
 two:
@@ -14,6 +16,8 @@ two:
   away: spain
   home_score: 1
   away_score: 3
+  home_shootout_score: 0
+  away_shootout_score: 0  
   status: Final
     
 three:
@@ -22,6 +26,8 @@ three:
   away: england
   home_score: 1
   away_score: 1
+  home_shootout_score: 0
+  away_shootout_score: 0  
   status: Final
     
 four:
@@ -30,6 +36,8 @@ four:
   away: argentina
   home_score: 0
   away_score: 0
+  home_shootout_score: 0
+  away_shootout_score: 0  
   status: Final
   
 five:
@@ -38,6 +46,8 @@ five:
   away: england
   home_score: 2
   away_score: 0
+  home_shootout_score: 0
+  away_shootout_score: 0  
   status: Final
   
 six:
@@ -46,4 +56,16 @@ six:
   away: spain
   home_score: 2
   away_score: 0
+  home_shootout_score: 0
+  away_shootout_score: 0
+  status: Final
+
+seven:
+  occurs_at: 2014-06-17 20:00:00
+  home: argentina
+  away: netherlands
+  home_score: 0
+  away_score: 0
+  home_shootout_score: 1
+  away_shootout_score: 0
   status: Final  

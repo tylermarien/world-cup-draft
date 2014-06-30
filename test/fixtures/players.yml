@@ -7,6 +7,7 @@ messi:
   goals: 1
   own_goals: 0
   penalty_goals: 0
+  shootout_goals: 1
 
 neymar:
   name: Neymar
@@ -14,7 +15,8 @@ neymar:
   image: http://cache.images.globalsportsmedia.com/soccer/players/150x150/102697.png
   goals: 1
   own_goals: 0
-  penalty_goals: 0  
+  penalty_goals: 0
+  shootout_goals: 0 
   
 rooney:
   name: Wayne Rooney
@@ -22,7 +24,8 @@ rooney:
   image: http://cache.images.globalsportsmedia.com/soccer/players/150x150/193.png
   goals: 2
   own_goals: 0
-  penalty_goals: 0  
+  penalty_goals: 0
+  shootout_goals: 0
   
 silva:
   name: David Silva
@@ -30,4 +33,5 @@ silva:
   image: http://cache.images.globalsportsmedia.com/soccer/players/150x150/3026.png
   goals: 3
   own_goals: 0
-  penalty_goals: 0  
+  penalty_goals: 0
+  shootout_goals: 0

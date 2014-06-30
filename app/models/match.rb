@@ -26,13 +26,13 @@ class Match < ActiveRecord::Base
   end  
   
   def winning_country
-    return self.home if self.home_score > self.away_score
-    return self.away if self.away_score > self.home_score
+    return home if home_score > away_score || home_shootout_score > away_shootout_score
+    return away if away_score > home_score || away_shootout_score > home_shootout_score
     return nil
   end
   
   def tie?
-    self.home_score == self.away_score
+    home_score == away_score && home_shootout_score == 0 && away_shootout_score == 0
   end
   
   def to_s

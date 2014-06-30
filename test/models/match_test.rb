@@ -14,8 +14,16 @@ class MatchTest < ActiveSupport::TestCase
     assert_equal countries(:argentina).id, matches(:one).winning_country.id
   end
   
-  test "should return false if the match since the match was not tied" do
+  test "should return the winning team in shootout" do
+    assert_equal countries(:argentina).id, matches(:seven).winning_country.id
+  end
+  
+  test "should return false since the match was not tied" do
     assert_not matches(:one).tie?
   end
+  
+  test "should return false since the match went to shootouts" do
+    assert_not matches(:seven).tie?
+  end  
 
 end

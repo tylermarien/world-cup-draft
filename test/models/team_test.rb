@@ -7,11 +7,11 @@ class TeamTest < ActiveSupport::TestCase
   end
   
   test "should return the correct matches played" do
-    assert_equal 6, @tyler.matches_played
+    assert_equal 7, @tyler.matches_played
   end
   
   test "should return the correct total" do
-    assert_equal 34, @tyler.calculate_total
+    assert_equal 40, @tyler.calculate_total
   end
   
   test "should return the correct number of countries remaining" do

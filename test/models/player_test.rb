@@ -6,8 +6,8 @@ class PlayerTest < ActiveSupport::TestCase
     @messi = players(:messi)
   end
   
-  test "should return the correct number of goals" do
-    assert_equal 1, @messi.goals
+  test "should return the correct total" do
+    assert_equal 3, @messi.calculate_total
   end
   
   test "should return the correct points from goals" do

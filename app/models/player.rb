@@ -12,7 +12,8 @@ class Player < ActiveRecord::Base
   format :json
   
   def calculate_total
-    calculate_points_from_goals
+    calculate_points_from_goals \
+      + calculate_points_from_shootout_goals
   end
   
   def calculate_points_from_goals

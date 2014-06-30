@@ -80,8 +80,19 @@ class Country < ActiveRecord::Base
     end
   end
   
+  def wins
+    wins = 0
+    home_matches.where(status: "Final").each do |m|
+      wins += 1 if m.winning_country.id == id unless m.winning_country.nil?
+    end
+    away_matches.where(status: "Final").each do |m|
+      wins += 1 if m.winning_country.id == id unless m.winning_country.nil?
+    end    
+    return wins   
+  end
+  
   def ties
-    self.draws 
+    draws 
   end
   
   def goal_differential

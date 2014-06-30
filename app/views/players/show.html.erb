@@ -1,0 +1,14 @@
+<div class="player">
+  <h1><%= @player.name %></h1>
+  <img class="player-image" src="<%= @player.image %>" width="150" height="150" alt="<%= @player.name %>">
+  <table>
+    <tr>
+      <th><strong>Goals:</strong></th>
+      <td><%= @player.goals %> (<%= pluralize(@player.calculate_points_from_goals, 'point') %>)</td>
+    </tr>
+    <tr>
+      <th><strong>Shootout Goals:</strong></th>
+      <td><%= @player.shootout_goals %> (<%= pluralize(@player.calculate_points_from_shootout_goals, 'point') %>)</td>
+    </tr>
+  </table>  
+</div>

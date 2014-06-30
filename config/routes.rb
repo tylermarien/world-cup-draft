@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/countries/:id', to: 'countries#show', as: 'country'
   
   get '/players/most_popular', to: 'players#most_popular', as: 'most_popular_players'
+  get '/players/:id', to: 'players#show', as: 'player'
   
   get '/teams/:id', to: 'teams#show', as: 'team'
   

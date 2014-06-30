@@ -6,13 +6,13 @@
 <ul class="team-and-player-list">
 <% @team.countries.each do |country| %>
   <li>
-    <strong><%= link_to country, country %> (<%= country.calculate_total %> points)</strong>
+    <strong><%= link_to country, country %> (<%= pluralize(country.calculate_total, 'point') %>)</strong>
     <% if country.eliminated? %>
       - Eliminated
     <% end %>
     <ul>
     <% @team.players.where(country_id: country.id).each do |player| %>
-      <li><%= player.name %> (<%= player.calculate_total %> points)</li>
+      <li><%= link_to player, player %> (<%= pluralize(player.calculate_total, 'point') %>)</li>
     <% end %>
     </ul>    
   </li>

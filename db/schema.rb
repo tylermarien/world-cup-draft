@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140630165517) do
+ActiveRecord::Schema.define(version: 20140630173145) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
@@ -21,12 +21,6 @@ ActiveRecord::Schema.define(version: 20140630165517) do
     t.string   "logo"
     t.integer  "group_rank"
     t.integer  "group_points"
-    t.integer  "matches_played"
-    t.integer  "wins"
-    t.integer  "losses"
-    t.integer  "draws"
-    t.integer  "goals_for"
-    t.integer  "goals_against"
     t.integer  "group_id"
   end
 

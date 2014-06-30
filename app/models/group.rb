@@ -2,7 +2,10 @@ class Group < ActiveRecord::Base
   has_many :countries
   
   def completed?
-    true unless countries.where("matches_played < ?", 3).count > 0
+    countries.each do |c|
+      return false if c.matches_played < 3
+    end
+    return true
   end
   
 end

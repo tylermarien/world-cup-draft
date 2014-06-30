@@ -23,12 +23,6 @@ class Country < ActiveRecord::Base
       country.logo = team['logo']
       country.group_rank = team['groupRank']
       country.group_points = team['groupPoints']
-      country.matches_played = team['matchesPlayed']
-      country.wins = team['wins']
-      country.losses = team['losses']
-      country.draws = team['draws']
-      country.goals_for = team['goalsFor']
-      country.goals_against = team['goalsAgainst']
       country.group = Group.find_by(name: team['group'])
       country.save
     end    
@@ -91,6 +85,17 @@ class Country < ActiveRecord::Base
     end    
     return wins   
   end
+  
+  def losses
+    losses = 0
+    home_matches.where(status: "Final").each do |m|
+      losses += 1 if m.winning_country.id != id unless m.winning_country.nil?
+    end
+    away_matches.where(status: "Final").each do |m|
+      losses += 1 if m.winning_country.id != id unless m.winning_country.nil?
+    end    
+    return losses   
+  end  
   
   def draws
     draws = 0

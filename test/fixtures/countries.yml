@@ -6,12 +6,6 @@ argentina:
   group: a
   group_rank: 1
   group_points: 7
-  matches_played: 3
-  wins: 2
-  losses: 0
-  draws: 1
-  goals_for: 3
-  goals_against: 0
 
 brazil:
   name: Brazil
@@ -19,12 +13,6 @@ brazil:
   group: a
   group_rank: 2
   group_points: 4
-  matches_played: 3
-  wins: 1
-  losses: 1
-  draws: 1
-  goals_for: 3
-  goals_against: 2
   
 england:
   name: England
@@ -32,12 +20,6 @@ england:
   group: a
   group_rank: 4
   group_points: 1
-  matches_played: 3
-  wins: 0
-  losses: 2
-  draws: 1
-  goals_for: 2
-  goals_against: 6
   
 spain:
   name: Spain
@@ -45,12 +27,6 @@ spain:
   group: a
   group_rank: 3
   group_points: 4
-  matches_played: 3
-  wins: 1
-  losses: 1
-  draws: 1
-  goals_for: 3
-  goals_against: 3
 
 netherlands:
   name: Netherlands
@@ -58,9 +34,3 @@ netherlands:
   group: b
   group_rank: 1
   group_points: 0
-  matches_played: 0
-  wins: 0
-  losses: 0
-  draws: 0
-  goals_for: 0
-  goals_against: 0

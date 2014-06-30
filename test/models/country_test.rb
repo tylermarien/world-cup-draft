@@ -71,7 +71,7 @@ class CountryTest < ActiveSupport::TestCase
   end
   
   test "should return correct total points for argentina" do
-    assert_equal 29, countries(:argentina).calculate_total
+    assert_equal 30, countries(:argentina).calculate_total
   end
   
   test "should not be eliminated if group is not completed" do

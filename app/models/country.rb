@@ -90,7 +90,7 @@ class Country < ActiveRecord::Base
   
   def wins
     wins = 0
-    matches.where(status: "Final").each do |m|
+    matches.each do |m|
       wins += 1 if m.winning_country.id == id unless m.winning_country.nil?
     end
     return wins   
@@ -98,7 +98,7 @@ class Country < ActiveRecord::Base
   
   def losses
     losses = 0
-    matches.where(status: "Final").each do |m|
+    matches.each do |m|
       losses += 1 if m.winning_country.id != id unless m.winning_country.nil?
     end
     return losses   
@@ -106,7 +106,7 @@ class Country < ActiveRecord::Base
   
   def draws
     draws = 0
-    matches.where(status: "Final").each do |m|
+    matches.each do |m|
       draws += 1 if m.tie?
     end
     return draws 

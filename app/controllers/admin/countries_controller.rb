@@ -61,7 +61,7 @@ class Admin::CountriesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   # GET /countries/import
   def import
     Country.import
@@ -76,6 +76,6 @@ class Admin::CountriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def country_params
-      params.require(:country).permit(:name, :api_id, :logo, :group, :group_rank, :group_points)
+      params.require(:country).permit(:name, :api_id, :logo, :group, :group_rank, :group_points, :placing)
     end
 end

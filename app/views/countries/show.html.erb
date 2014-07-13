@@ -10,29 +10,35 @@
       <th><strong>Wins:</strong></th>
       <td><%= @country.wins %> (<%= pluralize(@country.calculate_points_from_wins, 'point') %>)</td>
     </tr>
-    <tr>    
+    <tr>
       <th><strong>Ties:</strong></th>
       <td><%= @country.ties %> (<%= pluralize(@country.calculate_points_from_ties, 'point') %>)</td>
     </tr>
-    <tr>    
+    <tr>
       <th><strong>Goal Differential:</strong></th>
       <td>
         <%= @country.goal_differential %> (<%= pluralize(@country.calculate_points_from_goal_differential, 'point') %>)
       </td>
     </tr>
-    <tr>    
+    <tr>
       <th><strong>Shutouts:</strong></th>
       <td><%= @country.shutouts %> (<%= pluralize(@country.calculate_points_from_shutouts, 'point') %>)</td>
     </tr>
-    <tr>    
+    <tr>
       <th><strong>Shootout Wins:</strong></th>
       <td><%= @country.shootout_wins %> (<%= pluralize(@country.calculate_points_from_shootout_wins, 'point') %>)</td>
-    </tr>    
+    </tr>
     <% if @country.group.completed? %>
-    <tr>    
+    <tr>
       <th><strong>Group Rank:</strong></th>
       <td><%= @country.group_rank %> (<%= pluralize(@country.calculate_points_from_group_rank, 'point') %>)</td>
     </tr>
     <% end %>
-  </table>  
+    <% if @country.placing %>
+    <tr>
+      <th><strong>Final Rank:</strong></th>
+      <td><%= @country.placing %> (<%= pluralize(@country.calculate_points_from_placing, 'point') %>)</td>
+    </tr>
+    <% end %>
+  </table>
 </div>

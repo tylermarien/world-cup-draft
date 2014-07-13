@@ -6,6 +6,7 @@ argentina:
   group: a
   group_rank: 1
   group_points: 7
+  placing: 1
 
 brazil:
   name: Brazil
@@ -13,20 +14,22 @@ brazil:
   group: a
   group_rank: 2
   group_points: 4
-  
+  placing: 2
+
 england:
   name: England
   logo: http://cache.images.globalsportsmedia.com/soccer/teams/150x150/774.png
   group: a
   group_rank: 4
   group_points: 1
-  
+
 spain:
   name: Spain
   logo: http://cache.images.globalsportsmedia.com/soccer/teams/150x150/2137.png
   group: a
   group_rank: 3
   group_points: 4
+  placing: 3
 
 netherlands:
   name: Netherlands
@@ -34,7 +37,7 @@ netherlands:
   group: b
   group_rank: 1
   group_points: 0
-  
+
 ecuador:
   name: Ecuador
   logo: http://cache.images.globalsportsmedia.com/soccer/teams/150x150/657.png

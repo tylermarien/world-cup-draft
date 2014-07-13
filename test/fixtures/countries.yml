@@ -6,7 +6,7 @@ argentina:
   group: a
   group_rank: 1
   group_points: 7
-  placing: 1
+  final_rank: 1
 
 brazil:
   name: Brazil
@@ -14,7 +14,7 @@ brazil:
   group: a
   group_rank: 2
   group_points: 4
-  placing: 2
+  final_rank: 2
 
 england:
   name: England
@@ -29,7 +29,7 @@ spain:
   group: a
   group_rank: 3
   group_points: 4
-  placing: 3
+  final_rank: 3
 
 netherlands:
   name: Netherlands

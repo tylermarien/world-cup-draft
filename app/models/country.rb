@@ -78,8 +78,8 @@ class Country < ActiveRecord::Base
   end
 
   def calculate_points_from_placing
-    return 0 unless placing
-    case placing
+    return 0 unless final_rank
+    case final_rank
     when 1
       return 6
     when 2

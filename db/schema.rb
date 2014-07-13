@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140713175000) do
+ActiveRecord::Schema.define(version: 20140713181928) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140713175000) do
     t.integer  "group_rank"
     t.integer  "group_points"
     t.integer  "group_id"
-    t.integer  "placing"
+    t.integer  "final_rank"
   end
 
   add_index "countries", ["group_id"], name: "index_countries_on_group_id"

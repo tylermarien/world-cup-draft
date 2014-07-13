@@ -34,10 +34,10 @@
       <td><%= @country.group_rank %> (<%= pluralize(@country.calculate_points_from_group_rank, 'point') %>)</td>
     </tr>
     <% end %>
-    <% if @country.placing %>
+    <% if @country.final_rank %>
     <tr>
       <th><strong>Final Rank:</strong></th>
-      <td><%= @country.placing %> (<%= pluralize(@country.calculate_points_from_placing, 'point') %>)</td>
+      <td><%= @country.final_rank %> (<%= pluralize(@country.calculate_points_from_placing, 'point') %>)</td>
     </tr>
     <% end %>
   </table>

@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :group %><br>
-    <%= f.text_field :group %>
+    <%= f.collection_select :group_id, Group.all, :id, :to_s %>
   </div>
   <div class="field">
     <%= f.label :group_rank %><br>

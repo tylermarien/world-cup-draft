@@ -146,7 +146,6 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
-    pg (0.18.2)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -262,7 +261,6 @@ DEPENDENCIES
   httparty
   jbuilder (~> 2.0)
   jquery-rails
-  pg
   rack-livereload
   rails (~> 4.2.3)
   rails_12factor

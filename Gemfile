@@ -31,9 +31,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # use HTTParty to access api
 gem 'httparty'
 
-group :development do
-  gem 'sqlite3'
+gem 'sqlite3'
 
+group :development do
   gem 'guard', '>= 2.2.2',       :require => false
   gem 'guard-minitest'
   gem 'guard-livereload',        :require => false
@@ -50,7 +50,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 

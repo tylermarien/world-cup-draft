@@ -46,10 +46,12 @@ group :development do
   gem 'capistrano-chruby'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
+  gem 'capistrano-passenger'
 end
 
 group :production do
   gem 'pg'
+  gem 'passenger'
   gem 'rails_12factor'
 end
 

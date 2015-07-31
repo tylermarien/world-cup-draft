@@ -33,6 +33,7 @@ gem 'httparty'
 
 group :development do
   gem 'sqlite3'
+
   gem 'guard', '>= 2.2.2',       :require => false
   gem 'guard-minitest'
   gem 'guard-livereload',        :require => false
@@ -40,6 +41,11 @@ group :development do
   gem 'rb-fsevent',              :require => false
   gem 'spring'
   gem 'terminal-notifier-guard'
+
+  gem 'capistrano'
+  gem 'capistrano-chruby'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
 end
 
 group :production do
@@ -52,9 +58,6 @@ end
 
 # Use unicorn as the app server
 # gem 'unicorn'
-
-# Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

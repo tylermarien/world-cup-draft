@@ -10,7 +10,7 @@ default: &default
   timeout: 5000
 
 development:
-  adapter: mysql
+  adapter: mysql2
   database: world-cup-draft
   username: world-cup-draft
   password: password

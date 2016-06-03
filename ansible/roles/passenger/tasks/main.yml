@@ -1,0 +1,25 @@
+---
+- name: Add key
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: "561F9B9CAC40B2F7"
+  tags:
+    - passenger
+
+- name: Add repo
+  apt_repository:
+    repo: "deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main"
+  tags:
+    - passenger
+
+- name: Install passenger
+  apt:
+    name: passenger
+    update_cache: yes
+    cache_valid_time: "{{ apt_cache_valid_time }}"
+
+- name: Install nginx extras
+  apt:
+    name: nginx-extras
+    update_cache: yes
+    cache_valid_time: "{{ apt_cache_valid_time }}"

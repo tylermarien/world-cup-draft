@@ -5,6 +5,7 @@
   roles:
     - git
     - ruby
+    - passenger
     - nginx
     - mariadb-server
 

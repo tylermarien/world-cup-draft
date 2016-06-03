@@ -31,7 +31,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # use HTTParty to access api
 gem 'httparty'
 
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.18'
 
 group :development do
   gem 'guard', '>= 2.2.2',       :require => false

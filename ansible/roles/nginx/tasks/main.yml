@@ -9,6 +9,16 @@
     update_cache: yes
     cache_valid_time: "{{ apt_cache_valid_time }}"
 
+- name: Update main config
+  copy:
+    src: nginx-main.conf
+    dest: /etc/nginx/nginx.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart nginx
+
 - name: Update config
   copy:
     src: nginx.conf

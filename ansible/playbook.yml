@@ -4,6 +4,7 @@
 
   roles:
     - git
+    - ruby
     - nginx
     - mariadb-server
 

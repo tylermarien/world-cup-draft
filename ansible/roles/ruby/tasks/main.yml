@@ -1,0 +1,34 @@
+---
+- name: Install dependencies
+  apt:
+    name: software-properties-common
+    update_cache: yes
+    cache_valid_time: "{{ apt_cache_valid_time }}"
+    state: latest
+  tags:
+    - ruby
+
+- name: Add Brightbox Ruby ppa
+  apt_repository:
+    repo: ppa:brightbox/ruby-ng
+  tags:
+    - ruby
+
+- name: Install Ruby
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+    cache_valid_time: "{{ apt_cache_valid_time }}"
+    state: latest
+  with_items:
+    - ruby2.2
+    - ruby2.2-dev
+  tags:
+    - ruby
+
+- name: Install Bundler
+  gem:
+    name: bundler
+    user_install: no
+  tags:
+    - ruby

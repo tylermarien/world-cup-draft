@@ -14,10 +14,16 @@
 
 - name: Install mariadb-server
   apt:
-    name: mariadb-server
+    name: "{{ item }}"
     update_cache: yes
     cache_valid_time: "{{ apt_cache_valid_time }}"
     state: latest
+  with_items:
+    - mariadb-server
+    - mariadb-client
+    - libmariadbd-dev
+    - libmariadbclient-dev
+    - libssl-dev
   tags:
     - mariadb
 

@@ -14,6 +14,14 @@
   tags:
     - ruby
 
+- name: Install C++ compiler
+  apt:
+    name: g++
+    update_cache: yes
+    cache_valid_time: "{{ apt_cache_valid_time }}"
+  tags:
+    - ruby
+
 - name: Install Ruby
   apt:
     name: "{{ item }}"
@@ -29,6 +37,13 @@
 - name: Install Bundler
   gem:
     name: bundler
+    user_install: no
+  tags:
+    - ruby
+
+- name: Install unicorn
+  gem:
+    name: unicorn
     user_install: no
   tags:
     - ruby

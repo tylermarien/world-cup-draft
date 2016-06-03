@@ -1,0 +1,91 @@
+---
+- name: Add key
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: "0xcbcb082a1bb943db"
+  tags:
+    - mariadb
+
+- name: Add repo
+  apt_repository:
+    repo: "deb [arch=amd64,i386] http://nyc2.mirrors.digitalocean.com/mariadb/repo/10.1/ubuntu trusty main"
+  tags:
+    - mariadb
+
+- name: Install mariadb-server
+  apt:
+    name: mariadb-server
+    update_cache: yes
+    cache_valid_time: "{{ apt_cache_valid_time }}"
+    state: latest
+  tags:
+    - mariadb
+
+- name: Install Python MySQLdb
+  apt:
+    name: python-mysqldb
+    update_cache: yes
+    cache_valid_time: "{{ apt_cache_valid_time }}"
+    state: latest
+  tags:
+    - mariadb
+
+- name: Add mariadb config
+  copy:
+    src: my.cnf
+    dest: /etc/mysql/my.cnf
+    mode: 0644
+    owner: root
+    group: root
+  notify:
+    - restart mariadb
+  tags:
+    - mariadb
+
+- name: Set mariadb root password
+  mysql_user:
+    name: "{{ database_root_user }}"
+    password: "{{ database_root_password }}"
+    check_implicit_admin: yes
+    login_user: "{{ database_root_user }}"
+    login_password: "{{ database_root_password }}"
+  tags:
+    - mariadb
+#
+# - name: Create admin user
+#   mysql_user:
+#     name: "{{ database_coconutadmin_user }}"
+#     password: "{{ database_coconutadmin_password }}"
+#     login_user: "{{ database_root_user }}"
+#     login_password: "{{ database_root_password }}"
+#   tags:
+#     - mariadb
+#
+# - name: Create database
+#   mysql_db:
+#     name: "{{ item.name }}"
+#     login_user: "{{ database_root_user }}"
+#     login_password: "{{ database_root_password }}"
+#   with_items: "{{ databases }}"
+#   tags:
+#     - mariadb
+#
+# - name: Create database users
+#   mysql_user:
+#     name: "{{ item.user }}"
+#     password: "{{ item.pass }}"
+#     login_user: "{{ database_root_user }}"
+#     login_password: "{{ database_root_password }}"
+#     priv: "{{ item.name }}.*:ALL"
+#   with_items: "{{ databases }}"
+#   tags:
+#     - mariadb
+#
+# - name: Grant coconutadmin user privileges
+#   mysql_user:
+#     name: "{{ database_coconutadmin_user }}"
+#     login_user: "{{ database_root_user }}"
+#     login_password: "{{ database_root_password }}"
+#     priv: "{{ databases|selectattr('name', 'defined')|map(attribute='name')|join('.*:ALL/') ~ '.*:ALL' }}"
+#   tags:
+#     - mariadb

@@ -3,6 +3,7 @@
   become: yes
 
   roles:
+    - users
     - git
     - ruby
     - passenger

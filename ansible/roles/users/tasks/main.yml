@@ -1,0 +1,13 @@
+---
+- name: Setup users
+  user:
+    name: "{{ item.username }}"
+    comment: "{{ item.name }}"
+    shell: /bin/bash
+  with_items: "{{ users }}"
+
+- name: Add authorized keys
+  authorized_key:
+    user: "{{ item.username }}"
+    key: "{{ item.key }}"
+  with_items: "{{ users }}"

@@ -1,0 +1,5 @@
+---
+users:
+  - username: tyler
+    name: Tyler Marien
+    key: "{{ lookup('file', 'tyler.pub') }}"

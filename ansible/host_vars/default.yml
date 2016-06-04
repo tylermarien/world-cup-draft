@@ -1,0 +1,11 @@
+---
+database_root_user: root
+database_root_password: password
+databases:
+  - name: world-cup-draft-dev
+    user: world-cup-draft-dev
+    password: password
+
+  - name: world-cup-draft-test
+    user: world-cup-draft-test
+    password: password

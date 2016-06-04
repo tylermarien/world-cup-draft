@@ -57,39 +57,23 @@
     login_password: "{{ database_root_password }}"
   tags:
     - mariadb
-#
-# - name: Create admin user
-#   mysql_user:
-#     name: "{{ database_coconutadmin_user }}"
-#     password: "{{ database_coconutadmin_password }}"
-#     login_user: "{{ database_root_user }}"
-#     login_password: "{{ database_root_password }}"
-#   tags:
-#     - mariadb
-#
+
 - name: Create database
   mysql_db:
-    name: "world-cup-draft"
+    name: "{{ item.name }}"
     login_user: "{{ database_root_user }}"
     login_password: "{{ database_root_password }}"
+  with_items: "{{ databases }}"
   tags:
     - mariadb
 
 - name: Create database users
   mysql_user:
-    name: "world-cup-draft"
-    password: "password"
+    name: "{{ item.user }}"
+    password: "{{ item.password }}"
     login_user: "{{ database_root_user }}"
     login_password: "{{ database_root_password }}"
-    priv: "world-cup-draft.*:ALL"
+    priv: "{{ item.name }}.*:ALL"
+  with_items: "{{ databases }}"
   tags:
     - mariadb
-
-# - name: Grant coconutadmin user privileges
-#   mysql_user:
-#     name: "{{ database_coconutadmin_user }}"
-#     login_user: "{{ database_root_user }}"
-#     login_password: "{{ database_root_password }}"
-#     priv: "{{ databases|selectattr('name', 'defined')|map(attribute='name')|join('.*:ALL/') ~ '.*:ALL' }}"
-#   tags:
-#     - mariadb

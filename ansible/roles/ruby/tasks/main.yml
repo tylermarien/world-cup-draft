@@ -40,10 +40,3 @@
     user_install: no
   tags:
     - ruby
-
-- name: Install unicorn
-  gem:
-    name: unicorn
-    user_install: no
-  tags:
-    - ruby

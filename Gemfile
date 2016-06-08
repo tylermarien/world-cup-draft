@@ -31,8 +31,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # use HTTParty to access api
 gem 'httparty'
 
-gem 'mysql2', '~> 0.3.18'
-
 group :development do
   gem 'guard', '>= 2.2.2',       :require => false
   gem 'guard-minitest'
@@ -51,13 +49,14 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'mysql2', '~> 0.3.18'
 end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-gem 'unicorn'
+# gem 'unicorn'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

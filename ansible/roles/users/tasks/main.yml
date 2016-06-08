@@ -2,8 +2,10 @@
 - name: Setup users
   user:
     name: "{{ item.username }}"
+    password: "{{ item.password }}"
     comment: "{{ item.name }}"
     shell: /bin/bash
+    group: sudo
   with_items: "{{ users }}"
 
 - name: Add authorized keys

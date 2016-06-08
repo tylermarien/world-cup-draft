@@ -20,7 +20,7 @@ test:
 
 production:
   adapter: mysql2
-  host: localhost
-  database: world-cup-draft-test
-  username: world-cup-draft-test
-  password: password
+  host: <%= ENV["DB_HOST"] %>
+  database: <%= ENV["DB_DATABASE"] %>
+  username: <%= ENV["DB_USERNAME"] %>
+  password: <%= ENV["DB_PASSWORD"] %>

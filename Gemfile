@@ -42,10 +42,9 @@ group :development do
   gem 'terminal-notifier-guard'
 
   gem 'capistrano'
-  gem 'capistrano-chruby'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
-  # gem 'capistrano-passenger'
+  gem 'capistrano-passenger'
 end
 
 group :production do

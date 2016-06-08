@@ -10,8 +10,8 @@
     cache_valid_time: "{{ apt_cache_valid_time }}"
 
 - name: Update main config
-  copy:
-    src: nginx-main.conf
+  template:
+    src: nginx.j2
     dest: /etc/nginx/nginx.conf
     owner: root
     group: root

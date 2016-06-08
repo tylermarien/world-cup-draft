@@ -2,6 +2,13 @@ user www-data;
 worker_processes 4;
 pid /run/nginx.pid;
 
+env SECRET_KEY_BASE={{ rails_secret_key_base }};
+
+env DB_HOST=localhost;
+env DB_DATABASE={{ databases[0].name }};
+env DB_USERNAME={{ databases[0].user }};
+env DB_PASSWORD={{ databases[0].password }};
+
 events {
 	worker_connections 768;
 	# multi_accept on;

@@ -32,6 +32,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'httparty'
 
 group :development do
+  gem 'sqlite3'
   gem 'guard', '>= 2.2.2',       :require => false
   gem 'guard-minitest'
   gem 'guard-livereload',        :require => false

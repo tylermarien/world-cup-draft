@@ -60,6 +60,7 @@ class Country < ActiveRecord::Base
   end
 
   def calculate_points_from_group_rank
+    return 0
     return 0 unless group.completed?
     case group_rank
     when 1
@@ -171,6 +172,7 @@ class Country < ActiveRecord::Base
   end
 
   def eliminated?
+    return false
     return true if group.completed? && (group_rank == 3 || group_rank == 4)
     elimination_matches.each do |m|
       return true if m.winning_country.id != id

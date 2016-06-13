@@ -94,7 +94,7 @@ class Country < ActiveRecord::Base
   end
 
   def elimination_matches
-    Match.where("status = 'Final' AND (home_id = #{id} OR away_id = #{id}) AND occurs_at > '2014-06-27 00:00:00'")
+    Match.where("status = 'Final' AND (home_id = #{id} OR away_id = #{id}) AND occurs_at > '2016-06-24 00:00:00'")
   end
 
   def matches_played

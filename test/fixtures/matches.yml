@@ -1,57 +1,57 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  occurs_at: 2014-06-08 20:00:00
+  occurs_at: 2016-06-08 20:00:00
   home: argentina
   away: brazil
   home_score: 1
   away_score: 0
   home_shootout_score: 0
-  away_shootout_score: 0  
+  away_shootout_score: 0
   status: Final
-  
+
 two:
-  occurs_at: 2014-06-09 20:00:00
+  occurs_at: 2016-06-09 20:00:00
   home: england
   away: spain
   home_score: 1
   away_score: 3
   home_shootout_score: 0
-  away_shootout_score: 0  
+  away_shootout_score: 0
   status: Final
-    
+
 three:
-  occurs_at: 2014-06-10 20:00:00
+  occurs_at: 2016-06-10 20:00:00
   home: brazil
   away: england
   home_score: 1
   away_score: 1
   home_shootout_score: 0
-  away_shootout_score: 0  
+  away_shootout_score: 0
   status: Final
-    
+
 four:
-  occurs_at: 2014-06-14 20:00:00
+  occurs_at: 2016-06-14 20:00:00
   home: spain
   away: argentina
   home_score: 0
   away_score: 0
   home_shootout_score: 0
-  away_shootout_score: 0  
+  away_shootout_score: 0
   status: Final
-  
+
 five:
-  occurs_at: 2014-06-15 20:00:00
+  occurs_at: 2016-06-15 20:00:00
   home: argentina
   away: england
   home_score: 2
   away_score: 0
   home_shootout_score: 0
-  away_shootout_score: 0  
+  away_shootout_score: 0
   status: Final
-  
+
 six:
-  occurs_at: 2014-06-16 20:00:00
+  occurs_at: 2016-06-16 20:00:00
   home: brazil
   away: spain
   home_score: 2
@@ -61,11 +61,11 @@ six:
   status: Final
 
 seven:
-  occurs_at: 2014-06-27 20:00:00
+  occurs_at: 2016-06-27 20:00:00
   home: argentina
   away: netherlands
   home_score: 0
   away_score: 0
   home_shootout_score: 1
   away_shootout_score: 0
-  status: Final  
+  status: Final

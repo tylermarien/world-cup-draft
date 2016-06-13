@@ -61,7 +61,7 @@ class Admin::MatchesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   # GET /matches/import/
   def import
     Match.import
@@ -76,6 +76,6 @@ class Admin::MatchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def match_params
-      params.require(:match).permit(:occurs_at, :home_id, :away_id, :home_score, :away_score, :home_shootout_score, :away_shootout_score)
+      params.require(:match).permit(:occurs_at, :home_id, :away_id, :home_score, :away_score, :home_shootout_score, :away_shootout_score, :status)
     end
 end

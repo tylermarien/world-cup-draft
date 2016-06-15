@@ -98,7 +98,7 @@ class Country < ActiveRecord::Base
   end
 
   def matches_played
-    home_matches.count(status: "Final") + away_matches.count(status: "Final")
+    matches.count
   end
 
   def wins

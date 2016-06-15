@@ -1,7 +1,7 @@
 <h1><%= @team.name %></h1>
 <p>
   <strong>Points:</strong>
-  <%= @team.calculate_total %>
+  <%= @team.total %>
 </p>
 <ul class="team-and-player-list">
 <% @team.countries.each do |country| %>
@@ -14,7 +14,7 @@
     <% @team.players.where(country_id: country.id).each do |player| %>
       <li><%= link_to player, player %> (<%= pluralize(player.calculate_total, 'point') %>)</li>
     <% end %>
-    </ul>    
+    </ul>
   </li>
 <% end %>
 </ul>

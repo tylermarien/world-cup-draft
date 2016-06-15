@@ -61,6 +61,13 @@ class Admin::TeamsController < ApplicationController
     end
   end
 
+  def calculate_totals
+    Team.all.each do |team|
+      team.save
+    end
+    redirect_to admin_teams_url, notice: 'Calculated totals.'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_team

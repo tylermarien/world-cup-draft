@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140713181928) do
+ActiveRecord::Schema.define(version: 20160615021653) do
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
@@ -79,6 +79,9 @@ ActiveRecord::Schema.define(version: 20140713181928) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "matches_played",      default: 0
+    t.integer  "countries_remaining", default: 0
+    t.integer  "total",               default: 0
   end
 
   create_table "users", force: :cascade do |t|

@@ -3,21 +3,22 @@ Rails.application.routes.draw do
     get 'countries/import', to: 'countries#import', as: 'import_countries'
     get 'matches/import', to: 'matches#import', as: 'import_matches'
     get 'players/import', to: 'players#import', as: 'import_players'
-  
+    get 'teams/calculate_totals', to: 'teams#calculate_totals', as: 'calculate_totals'
+
     resources :countries, :matches, :players, :teams
-  end    
+  end
 
   devise_for :users
   root 'welcome#index'
-  
+
   get '/countries/most_popular', to: 'countries#most_popular', as: 'most_popular_countries'
   get '/countries/:id', to: 'countries#show', as: 'country'
-  
+
   get '/players/most_popular', to: 'players#most_popular', as: 'most_popular_players'
   get '/players/:id', to: 'players#show', as: 'player'
-  
+
   get '/teams/:id', to: 'teams#show', as: 'team'
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

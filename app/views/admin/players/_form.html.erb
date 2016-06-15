@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :country_id %><br>
-    <%= f.collection_select :country_id, Country.all, :id, :to_s %>
+    <%= f.collection_select :country_id, Country.order(:name), :id, :to_s %>
   </div>
   <div class="field">
     <%= f.label :goals %><br>

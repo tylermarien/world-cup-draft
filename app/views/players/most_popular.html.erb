@@ -1,6 +1,6 @@
 <h1>Most Popular</h1>
 <ul>
 <% @players.each do |player| %>
-  <li><%= player %> (<%= pluralize player.number_of_teams, 'team' %>)</li>
+  <li><%= link_to player, player %> (<%= pluralize player.number_of_teams, 'team' %>)</li>
 <% end %>
 </ul>

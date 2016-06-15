@@ -16,14 +16,6 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :api_id %><br>
-    <%= f.text_field :api_id %>
-  </div>
-  <div class="field">
-    <%= f.label :logo %><br>
-    <%= f.text_field :logo %>
-  </div>
-  <div class="field">
     <%= f.label :group %><br>
     <%= f.collection_select :group_id, Group.all, :id, :to_s %>
   </div>

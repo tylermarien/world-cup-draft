@@ -1,6 +1,10 @@
 <div class="country">
   <h1><%= @country.name %></h1>
   <table>
+    <tr>
+      <th><strong>Total:</strong></th>
+      <td><%= @country.calculate_total %> points</td>
+    </tr>
     <% if @country.handicap != 0 %>
     <tr>
       <th><strong>Handicap:</strong></th>

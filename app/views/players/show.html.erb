@@ -2,6 +2,10 @@
   <h1><%= @player.name %></h1>
   <table>
     <tr>
+      <th><strong>Total:</strong></th>
+      <td><%= @player.calculate_total %> points</td>
+    </tr>
+    <tr>
       <th><strong>Goals:</strong></th>
       <td><%= @player.goals %> (<%= pluralize(@player.calculate_points_from_goals, 'point') %>)</td>
     </tr>

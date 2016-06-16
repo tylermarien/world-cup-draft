@@ -4,6 +4,7 @@ argentina:
   name: Argentina
   logo: http://cache.images.globalsportsmedia.com/soccer/teams/150x150/132.png
   group: a
+  handicap: -3
   group_rank: 1
   group_points: 7
   final_rank: 1
@@ -12,6 +13,7 @@ brazil:
   name: Brazil
   logo: http://cache.images.globalsportsmedia.com/soccer/teams/150x150/349.png
   group: a
+  handicap: 0
   group_rank: 2
   group_points: 4
   final_rank: 2
@@ -20,6 +22,7 @@ england:
   name: England
   logo: http://cache.images.globalsportsmedia.com/soccer/teams/150x150/774.png
   group: a
+  handicap: 0
   group_rank: 4
   group_points: 1
 
@@ -27,6 +30,7 @@ spain:
   name: Spain
   logo: http://cache.images.globalsportsmedia.com/soccer/teams/150x150/2137.png
   group: a
+  handicap: 0
   group_rank: 3
   group_points: 4
   final_rank: 3
@@ -35,6 +39,7 @@ netherlands:
   name: Netherlands
   logo: http://cache.images.globalsportsmedia.com/soccer/teams/150x150/1552.png
   group: b
+  handicap: 0
   group_rank: 1
   group_points: 0
 
@@ -42,5 +47,6 @@ ecuador:
   name: Ecuador
   logo: http://cache.images.globalsportsmedia.com/soccer/teams/150x150/657.png
   group: b
+  handicap: 0
   group_rank: 4
   group_points: 0

@@ -1,6 +1,12 @@
 <div class="country">
   <h1><%= @country.name %></h1>
   <table>
+    <% if @country.handicap != 0 %>
+    <tr>
+      <th><strong>Handicap:</strong></th>
+      <td><%= @country.handicap %> points</td>
+    </tr>
+    <% end %>
     <tr>
       <th><strong>Games Played:</strong></th>
       <td><%= @country.matches_played %> (<%= pluralize(@country.calculate_points_from_matches_played, 'point') %>)</td>

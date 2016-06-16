@@ -2,6 +2,10 @@ require 'test_helper'
 
 class CountryTest < ActiveSupport::TestCase
 
+  test "should return the correct handicap played for argentina" do
+    assert_equal -3, countries(:argentina).handicap
+  end
+
   test "should return the correct number of matches played for argentina" do
     assert_equal 4, countries(:argentina).matches_played
   end
@@ -71,7 +75,7 @@ class CountryTest < ActiveSupport::TestCase
   end
 
   test "should return correct total points for argentina" do
-    assert_equal 36, countries(:argentina).calculate_total
+    assert_equal 33, countries(:argentina).calculate_total
   end
 
   test "should not be eliminated if group is not completed" do

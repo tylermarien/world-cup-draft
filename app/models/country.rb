@@ -6,6 +6,7 @@ class Country < ActiveRecord::Base
   has_and_belongs_to_many :teams
   has_many :home_matches, class_name: 'Match', foreign_key: 'home_id'
   has_many :away_matches, class_name: 'Match', foreign_key: 'away_id'
+  validates :handicap, numericality: { only_integer: true }
 
   scope :most_popular, -> { select("#{Country.table_name}.*, COUNT(#{Team.table_name}.id) AS number_of_teams").joins(:teams).group("#{Country.table_name}.id").order("COUNT(#{Team.table_name}.id) DESC") }
 
@@ -36,7 +37,8 @@ class Country < ActiveRecord::Base
       + self.calculate_points_from_shutouts \
       + self.calculate_points_from_group_rank \
       + self.calculate_points_from_shootout_wins \
-      + self.calculate_points_from_placing
+      + self.calculate_points_from_placing \
+      + self.handicap
   end
 
   def calculate_points_from_matches_played

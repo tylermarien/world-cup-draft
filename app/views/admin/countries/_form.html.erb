@@ -20,6 +20,10 @@
     <%= f.collection_select :group_id, Group.all, :id, :to_s %>
   </div>
   <div class="field">
+    <%= f.label :handicap %><br>
+    <%= f.text_field :handicap %>
+  </div>
+  <div class="field">
     <%= f.label :group_rank %><br>
     <%= f.text_field :group_rank %>
   </div>

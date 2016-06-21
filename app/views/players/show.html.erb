@@ -14,4 +14,5 @@
       <td><%= @player.shootout_goals %> (<%= pluralize(@player.calculate_points_from_shootout_goals, 'point') %>)</td>
     </tr>
   </table>
+  <%= render 'partials/teams', :teams => @player.teams.order(:name) %>
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160616011458) do
+ActiveRecord::Schema.define(version: 20160621021411) do
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160616011458) do
     t.integer  "group_id"
     t.integer  "final_rank"
     t.integer  "handicap",     default: 0
+    t.boolean  "eliminated",   default: false
   end
 
   add_index "countries", ["group_id"], name: "index_countries_on_group_id"

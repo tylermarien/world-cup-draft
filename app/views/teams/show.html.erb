@@ -7,7 +7,7 @@
 <% @team.countries.each do |country| %>
   <li>
     <strong><%= link_to country, country %> (<%= pluralize(country.calculate_total, 'point') %>)</strong>
-    <% if country.eliminated? %>
+    <% if country.eliminated %>
       - Eliminated
     <% end %>
     <ul>

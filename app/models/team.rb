@@ -8,7 +8,7 @@ class Team < ActiveRecord::Base
   end
 
   def calculate_countries_remaining
-    countries.to_a.count { |c| !c.eliminated? }
+    countries.to_a.count { |c| !c.eliminated }
   end
 
   def calculate_total

@@ -172,14 +172,6 @@ class Country < ActiveRecord::Base
     return wins
   end
 
-  def eliminated?
-    return true if group.completed? && (group_rank == 3 || group_rank == 4)
-    elimination_matches.each do |m|
-      return true if m.winning_country.id != id
-    end
-    return false
-  end
-
   def to_s
     name
   end

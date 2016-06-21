@@ -1,4 +1,4 @@
-<h1>Top Scorers</h1>
+<h1><%=t 'nav.top_scorers' %></h1>
 <ul>
 <% @players.each do |player| %>
   <li><%= link_to player, player %> (<%= pluralize player.goals, 'goal' %>)</li>
